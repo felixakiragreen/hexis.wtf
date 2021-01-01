@@ -1,30 +1,93 @@
 <script>
-	export let name;
+	import { onMount } from 'svelte'
+	import Socials from './Social/index.svelte'
+	import Metadata from './Metadata.svelte'
+
+	let mounted = false
+
+  onMount(async () => {
+    // This is to prevent flashing
+    mounted = true
+  })
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<h1 class="desktop">season 01 begins</h1>
+	<h1 class="mobile">s01 begins</h1>
+	<p>
+		<span class="nb">created by <a href="https://twitter.com/felixakiragreen">Felix Green</a></span>
+		<span class="nb">and <a href="https://twitter.com/trentonmcbeth">Trenton McBeth</a></span>
+	</p>
+	<img src="hexis-640.png" />
+
+	<p>
+		<span style="color: var(--grey-400);">follow us</span>
+		<span style="color: var(--grey-100);">@hexis_wtf</span>
+	</p>
+	
+	<div>
+	
+	</div>
+
+	<Metadata />
+
+	{#if mounted}
+		<footer>
+			<Socials />
+		</footer>
+	{/if}
 </main>
+
 
 <style>
 	main {
 		text-align: center;
-		padding: 1em;
-		max-width: 240px;
 		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center; 
+		justify-content: center;
+		height: 100%;
+		width: 100%;
 	}
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
+	footer {
+		height: 120px;
+		width: 100%;
 	}
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
+	.nb {
+		white-space: nowrap;
+	}
+
+	img {
+		max-width: 320px;
+	}
+
+	a {
+		color: var(--green-400);
+		text-decoration: none;
+	}
+
+	a:hover {
+		color: var(--green-300);
+		text-decoration: none;
+	}
+
+	.desktop {
+		display: initial;
+	}
+	.mobile {
+		display: none;
+	}
+	
+	@media (max-width: 600px) {
+		.desktop {
+			display: none;
+		}
+		.mobile {
+			display: initial;
 		}
 	}
+
 </style>
