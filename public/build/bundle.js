@@ -1133,7 +1133,7 @@ var app = (function () {
     			footer = element("footer");
     			create_component(socials.$$.fragment);
     			attr_dev(footer, "class", "svelte-1vlkhuf");
-    			add_location(footer, file$4, 34, 2, 744);
+    			add_location(footer, file$4, 34, 2, 776);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, footer, anchor);
@@ -1236,25 +1236,27 @@ var app = (function () {
     			attr_dev(h11, "class", "mobile svelte-1vlkhuf");
     			add_location(h11, file$4, 15, 1, 298);
     			attr_dev(a0, "href", "https://twitter.com/felixakiragreen");
+    			attr_dev(a0, "target", "_blank");
     			attr_dev(a0, "class", "svelte-1vlkhuf");
     			add_location(a0, file$4, 17, 30, 368);
     			attr_dev(span0, "class", "nb svelte-1vlkhuf");
     			add_location(span0, file$4, 17, 2, 340);
     			attr_dev(a1, "href", "https://twitter.com/trentonmcbeth");
+    			attr_dev(a1, "target", "_blank");
     			attr_dev(a1, "class", "svelte-1vlkhuf");
-    			add_location(a1, file$4, 18, 23, 460);
+    			add_location(a1, file$4, 18, 23, 476);
     			attr_dev(span1, "class", "nb svelte-1vlkhuf");
-    			add_location(span1, file$4, 18, 2, 439);
+    			add_location(span1, file$4, 18, 2, 455);
     			add_location(p0, file$4, 16, 1, 334);
     			if (img.src !== (img_src_value = "hexis-640.png")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "class", "svelte-1vlkhuf");
-    			add_location(img, file$4, 20, 1, 537);
+    			add_location(img, file$4, 20, 1, 569);
     			set_style(span2, "color", "var(--grey-400)");
-    			add_location(span2, file$4, 23, 2, 573);
+    			add_location(span2, file$4, 23, 2, 605);
     			set_style(span3, "color", "var(--grey-100)");
-    			add_location(span3, file$4, 24, 2, 630);
-    			add_location(p1, file$4, 22, 1, 567);
-    			add_location(div, file$4, 27, 1, 695);
+    			add_location(span3, file$4, 24, 2, 662);
+    			add_location(p1, file$4, 22, 1, 599);
+    			add_location(div, file$4, 27, 1, 727);
     			attr_dev(main, "class", "svelte-1vlkhuf");
     			add_location(main, file$4, 13, 0, 247);
     		},
