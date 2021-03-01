@@ -16,9 +16,11 @@
 	<h1 class="mobile">s01 begins</h1>
 	<p>
 		<span class="nb">created by <a href="https://twitter.com/felixakiragreen" target="_blank">Felix Green</a></span>
-		<span class="nb">and <a href="https://twitter.com/trentonmcbeth" target="_blank">Trenton McBeth</a></span>
+		<span class="nb">and <a href="https://twitter.com/Macbeth_wtf" target="_blank">Trenton McBeth</a></span>
 	</p>
-	<img src="hexis-640.png" />
+	<a href="https://app.rarible.com/hexis_wtf">
+		<img src="hexis-640.png" alt="Hexis Logo" />
+	</a>
 
 	<p>
 		<span style="color: var(--grey-400);">follow us</span>
