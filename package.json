@@ -2,7 +2,7 @@
   "name": "hexis.wtf",
   "version": "1.0.0",
   "description": "a website",
-  "license": "Unlicence",
+  "license": "Unlicense",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",

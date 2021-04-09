@@ -6,7 +6,7 @@ export const socials = [
   [
     {
       // type: 'rarible',
-      url: 'https://app.rarible.com/hexis_wtf',
+      url: 'https://app.rarible.com/hexis_wtf?tab=collectibles',
       username: 'hexis_wtf',
       color: 'yellow',
       ...icon_rarible,
