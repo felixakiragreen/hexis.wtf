@@ -10,6 +10,11 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
+"@stitches/core@^0.1.9":
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/@stitches/core/-/core-0.1.9.tgz#6cc42ae6052f6900f9add164232449ff8d62c4ba"
+  integrity sha512-70gVb0uhgV6BOJmloirWEGZmofk/Hzr5yWlub1rtm4CvimD3Xl5xr9fVkjcTu+REC6ILCJCnlEP4WmilTfXNOA==
+
 "@sveltejs/kit@next":
   version "1.0.0-next.100"
   resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.100.tgz#28ba243b823bebbb116f0f51afc88c8e90e22cc9"
