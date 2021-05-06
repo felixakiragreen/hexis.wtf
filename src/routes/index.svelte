@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte'
-	import Socials from './Social/index.svelte'
-	import Metadata from './Metadata.svelte'
+	import Socials from '$lib/Social/index.svelte'
+	import Metadata from '$lib/Metadata.svelte'
 
 	let mounted = false
 
@@ -19,7 +19,7 @@
 		<span class="nb">and <a href="https://twitter.com/Macbeth_wtf" target="_blank">Macbeth</a></span>
 	</p>
 	<a href="https://app.rarible.com/hexis_wtf?tab=collectibles" target="_blank">
-		<img src="hexis-640.png" alt="Hexis Logo" />
+		<img src="src/assets/hexis-640.png" alt="Hexis Logo" />
 	</a>
 
 	<p>
@@ -49,8 +49,8 @@
 		flex-direction: column;
 		align-items: center; 
 		justify-content: center;
-		height: 100%;
-		width: 100%;
+		min-height: 100vh;
+		min-width: 100vw;
 	}
 
 	footer {
