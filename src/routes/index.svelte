@@ -2,16 +2,31 @@
 	import { onMount } from 'svelte'
 	import Socials from '$lib/Social/index.svelte'
 	import Metadata from '$lib/Metadata.svelte'
+	import Button from '$lib/Button.svelte'
+	
+	import { css } from '@/ui'
 
-	let mounted = false
+	import hexisLogo from '@/assets/hexis-1920-no-bg.svg'
 
-  onMount(async () => {
-    // This is to prevent flashing
-    mounted = true
-  })
+	// let mounted = false
+
+  // onMount(async () => {
+  //   // This is to prevent flashing
+  //   mounted = true
+  // })
+
+	const mainCss = css({
+		backgroundColor: "$background",
+		color: "$foreground"
+	})
+
 </script>
 
-<main>
+<header>
+
+</header>
+
+<main class={mainCss}>
 	<h1 class="desktop">season 01 begins</h1>
 	<h1 class="mobile">s01 begins</h1>
 	<p>
@@ -19,7 +34,7 @@
 		<span class="nb">and <a href="https://twitter.com/Macbeth_wtf" target="_blank">Macbeth</a></span>
 	</p>
 	<a href="https://app.rarible.com/hexis_wtf?tab=collectibles" target="_blank">
-		<img src="src/assets/hexis-640.png" alt="Hexis Logo" />
+		<img src={hexisLogo} width="100%" height="100%" alt="Hexis Logo" />
 	</a>
 
 	<p>
@@ -28,16 +43,16 @@
 	</p>
 	
 	<div>
-	
+		<Button />
 	</div>
 
-	<Metadata />
+	<!-- <Metadata /> -->
 
-	{#if mounted}
+	<!-- {#if mounted} -->
 		<footer>
 			<Socials />
 		</footer>
-	{/if}
+	<!-- {/if} -->
 </main>
 
 
