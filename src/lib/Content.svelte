@@ -1,31 +1,28 @@
 <script>
+	import { stitch } from '@/ui'
 
-	import { css } from '@/ui'
+	export let css = null
 
-	
-	const ss = css({
+	const ss = stitch({
 		// backgroundColor: "$background",
-    // color: "$foreground",
+		// color: "$foreground",
 
-    mx: 'auto',
-    maxWidth: '$screen-lg',
-    py: '$4',
+		mx: 'auto',
+		maxWidth: '$screen-lg',
+		py: '$4',
 
-    '@initial': {
-      px: '$4',
-    },
-    '@sm': {
-      px: '$8',
-    },
-    '@xl': {
-      px: '$0',
-    },
-    
+		'@initial': {
+			px: '$4',
+		},
+		'@sm': {
+			px: '$8',
+		},
+		'@xl': {
+			px: '$0',
+		},
 	})
-
 </script>
 
-
-<section class={ss}>
-  <slot />
+<section class={ss({ css })}>
+	<slot />
 </section>

@@ -1,7 +1,7 @@
 <script>
-	import { css } from '@/ui'
-	
-	const buttonStyles = css({
+	import { stitch } from '@/ui'
+
+	const buttonStyles = stt({
 		backgroundColor: '$colors$felixgreen',
 		borderRadius: '9999px',
 		fontSize: '$3',
@@ -12,7 +12,7 @@
 		paddingLeft: '16px',
 		paddingRight: '16px',
 		border: '0',
-    cursor: "pointer",
+		cursor: 'pointer',
 
 		// Pseudo-class selector
 		'&:hover': {
@@ -20,7 +20,6 @@
 			boxShadow: '0 10px 25px rgba(0, 0, 0, .3)',
 		},
 	})
-
 </script>
 
 <button class={buttonStyles}>Button</button>
