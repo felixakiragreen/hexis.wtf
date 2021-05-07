@@ -119,6 +119,10 @@ const space = {
 	72: '18rem', // 288px
 	80: '20rem', // 320px
 	96: '24rem', // 384px
+	112: '28rem', // 448px
+	128: '32rem', // 512px
+	144: '36rem', // 576px
+	160: '40rem', // 640px
 	'-px': '-1px', // 1px
 	'-0.5': '-0.125rem', // 2px
 	'-1': '-0.25rem', // 4px
@@ -153,6 +157,10 @@ const space = {
 	'-72': '-18rem', // 288px
 	'-80': '-20rem', // 320px
 	'-96': '-24rem', // 384px
+	'-112': '-28rem', // 448px
+	'-128': '-32rem', // 512px
+	'-144': '-36rem', // 576px
+	'-160': '-40rem', // 640px
 }
 
 const max = {
@@ -173,6 +181,8 @@ const max = {
 	min: 'min-content',
 	max: 'max-content',
 	prose: '65ch',
+	'screen-w': '100vw',
+	'screen-h': '100vh',
 	'screen-sm': '640px',
 	'screen-md': '768px',
 	'screen-lg': '1024px',
@@ -363,9 +373,15 @@ export const utils = {
 		fontSize: value,
 		lineHeight: value,
 	}),
-	size: (config) => (value) => ({
+	w: (config) => (value) => ({
 		width: value,
+	}),
+	h: (config) => (value) => ({
 		height: value,
+	}),
+	size: (config) => (value) => ({
+		w: value,
+		h: value,
 	}),
 	surrounding: (config) => (value) => ({
 		top: value,
@@ -400,6 +416,13 @@ export const utils = {
 	linearGradient: (config) => (value) => ({
 		backgroundImage: `linear-gradient(${value})`,
 	}),
+	blur: (config) => (value) => ({
+		filter: `blur(${value})`,
+	}),
+	bg: (config) => (value) => ({
+		backgroundColor: value,
+	}),
+	// filter: blur(10px);
 }
 
 // --tw-space-y-reverse: 0;
