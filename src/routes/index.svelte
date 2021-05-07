@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Hero from '@/lib/Hero.svelte'
-	import Season from '$lib/Season.svelte'
+	import Season1Collection from '@/lib/Season1Collection.svelte'
 
 	import { stitch } from '@/ui'
 
@@ -14,7 +14,7 @@
 
 	<Hero />
 
-	<Season />
+	<Season1Collection />
 
 	<!-- <h1 class="desktop">season 01 begins</h1>
 	<h1 class="mobile">s01 begins</h1>
