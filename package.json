@@ -13,6 +13,8 @@
 	"devDependencies": {
 		"@stitches/core": "^0.1.9",
 		"@sveltejs/kit": "next",
+		"date-fns": "^2.21.2",
+		"lodash": "^4.17.21",
 		"prettier": "~2.2.1",
 		"prettier-plugin-svelte": "^2.2.0",
 		"simple-icons": "^4.4.0",
