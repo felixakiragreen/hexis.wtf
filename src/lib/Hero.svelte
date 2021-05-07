@@ -1,0 +1,105 @@
+<script lang="ts">
+	import { stitch } from '@/ui'
+	import Content from '$lib/Content.svelte'
+	import Img from '$lib/Img.svelte'
+	import Box from '$lib/Box.svelte'
+	import Stack from '$lib/Stack.svelte'
+
+	import hexisLogo from '@/assets/hexis-1920-no-bg.svg'
+
+	const ss = stitch({
+		// backgroundColor: '$red600',
+		// color: '$foreground',
+		position: 'relative',
+		minHeight: '$screen-h',
+		minWidth: '$screen-w',
+
+		'& section': {
+			position: 'relative',
+			height: '$full',
+			// minHeight: '$screen-h',
+			// minWidth: '$screen-w',
+			display: 'flex',
+			alignItems: 'center',
+			justifyContent: 'center',
+		},
+	})
+
+	const ss1 = stitch({
+		mt: '$32',
+		bg: '$red400',
+		textAlign: 'center',
+
+		'& h1': {
+			text: '$9xl',
+		},
+
+		'& p': {
+			text: '$lg',
+			maxWidth: '$2xl',
+		},
+	})
+
+	const ss2 = stitch({
+		p: '$4',
+		borderRadius: '$sm',
+		bg: '$red200',
+		// textAlign: 'center',
+		border: '1px solid $foreground',
+
+		// '& h1': {
+		// 	text: '$9xl',
+		// },
+
+		// '& p': {
+		// 	text: '$lg',
+		// 	maxWidth: '$2xl',
+		// },
+	})
+</script>
+
+<div class={ss()}>
+
+	<Content css={{}}>
+		<Img
+			src={hexisLogo}
+			alt="Hexis Logo"
+			css={{ size: '$96', position: 'absolute', top: '$-16', left: '$-16' }} />
+		<Img
+			src={hexisLogo}
+			alt="Hexis Logo"
+			css={{ size: '$32', position: 'absolute', top: '$16', right: '$16', blur: '2px' }} />
+		<Img
+			src={hexisLogo}
+			alt="Hexis Logo"
+			css={{ size: '$56', position: 'absolute', bottom: '$12', left: '$-32' }} />
+		<Img
+			src={hexisLogo}
+			alt="Hexis Logo"
+			css={{ size: '$160', position: 'absolute', bottom: '$-32', right: '$-128' }} />
+		<Img
+			src={hexisLogo}
+			alt="Hexis Logo"
+			css={{ size: '$20', position: 'absolute', bottom: '$-24', left: '$12', blur: '2px' }} />
+
+		<Stack space="md">
+			<Box cls={ss1}>
+				<h1>hexis</h1>
+
+				<p>
+					An experiment in shape and dimension. The generative madness of an algorithm with the soft
+					guidance of the artist's hand.
+					<br />
+					Catch a new episode each friday at 09:00 et.
+				</p>
+			</Box>
+
+			<Box cls={ss2}>
+				<p>join the community of hexagon 💚ers</p>
+				<a href="">+Follow on Twitter</a>
+			</Box>
+		</Stack>
+
+	</Content>
+
+</div>
