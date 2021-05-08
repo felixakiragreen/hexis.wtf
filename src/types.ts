@@ -3,6 +3,7 @@ export type SocialLink = {
 	username: string
 	title: string
 	hex: string
+	color: string
 	path: string
 	transform: {
 		scale: number

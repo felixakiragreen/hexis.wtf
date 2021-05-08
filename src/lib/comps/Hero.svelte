@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { stitch } from '@/ui'
-	import Content from '@/lib/bbonds/Content.svelte'
-	import Img from '@/lib/aatoms/Image.svelte'
-	import Box from '@/lib/aatoms/Box.svelte'
-	import Stack from '@/lib/bbonds/Stack.svelte'
+	import Content from '@/lib/bonds/Content.svelte'
+	import Img from '@/lib/atoms/Image.svelte'
+	import Box from '@/lib/atoms/Box.svelte'
+	import Stack from '@/lib/bonds/Stack.svelte'
 
 	import hexisLogo from '@/assets/hexis-1920-no-bg.svg'
 

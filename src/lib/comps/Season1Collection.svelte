@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { stitch } from '@/ui'
-	import Content from '@/lib/bbonds/Content.svelte'
-	import Image from '@/lib/aatoms/Image.svelte'
-	import Box from '@/lib/aatoms/Box.svelte'
-	import Stack from '@/lib/bbonds/Stack.svelte'
-	import Text from '@/lib/aatoms/Text.svelte'
+	import Content from '@/lib/bonds/Content.svelte'
+	import Image from '@/lib/atoms/Image.svelte'
+	import Box from '@/lib/atoms/Box.svelte'
+	import Stack from '@/lib/bonds/Stack.svelte'
+	import Text from '@/lib/atoms/Text.svelte'
 
-	import HexBackground from '@/lib/ssocial/HexBackground.svelte'
+	import Hexagon from '@/lib/bonds/Hexagon.svelte'
 
 	import { map, take, takeRight } from 'lodash'
 	import { addWeeks, isBefore } from 'date-fns'
@@ -121,7 +121,7 @@
 		{#each first50 as episode}
 			<Box css={{ size: '$100%' }}>
 
-				<HexBackground fill={episode.past ? '#00ff00' : ''} />
+				<Hexagon fill={episode.past ? '#00ff00' : ''} />
 			</Box>
 		{/each}
 
@@ -131,7 +131,7 @@
 		{#each last3 as episode}
 			<Box css={{ size: '$100%' }}>
 
-				<HexBackground />
+				<Hexagon />
 			</Box>
 		{/each}
 

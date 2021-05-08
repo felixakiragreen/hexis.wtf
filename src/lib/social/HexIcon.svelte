@@ -22,8 +22,8 @@
 <a
 	href={url}
 	target="_blank"
-	style="--base-hex-bg: var(--{color}-400); --base-fill: var(--grey-700); --hover-hex-bg: var(--{color}-700);
-	--hover-fill: var(--grey-200);">
+	style="--base-hex-bg: var(--colors-{color}400); --base-fill: var(--colors-grey700);
+	--hover-hex-bg: var(--colors-{color}700); --hover-fill: var(--colors-grey200);">
 	<HexBackground fill="var(--hex-bg)">
 		<g transform={`translate(${OFFSET},${OFFSET}) scale(0.75)`}>
 			<path d={path} fill="var(--fill)" />

@@ -1,6 +1,6 @@
 <script>
 	import { stitch } from '@/ui'
-	import Box from '../aatoms/Box.svelte'
+	import Box from '../atoms/Box.svelte'
 
 	export let css = null
 	export let space = null
@@ -8,16 +8,17 @@
 
 	const ss = stitch({
 		display: 'flex',
-		flexDirection: 'column',
+		flexDirection: 'row',
+		flexWrap: 'wrap',
 
 		variants: {
 			space: {
 				no: {},
 				sm: {
-					sy: '$2',
+					sx: '$2',
 				},
 				md: {
-					sy: '$4',
+					sx: '$4',
 				},
 			},
 			align: {

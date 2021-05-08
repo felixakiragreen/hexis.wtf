@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { stitch } from '@/ui'
-	import Content from '@/lib/bbonds/Content.svelte'
-	import Box from '@/lib/aatoms/Box.svelte'
-	import Stack from '@/lib/bbonds/Stack.svelte'
+	import Content from '@/lib/bonds/Content.svelte'
+	import Box from '@/lib/atoms/Box.svelte'
+	import Stack from '@/lib/bonds/Stack.svelte'
+	import Socials from '@/lib/social/index.svelte'
 
 	const ss = stitch({
 		backgroundColor: '$background',
@@ -41,5 +42,6 @@
 				<p>~ Artistotle, Metaphysics 5.1022b</p>
 			</Box>
 		</Stack>
+		<Socials />
 	</Content>
 </footer>

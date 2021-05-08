@@ -1,9 +1,9 @@
-import icon_twitter from './iicons/twitter'
-import icon_discord from './iicons/discord'
-import icon_opensea from './iicons/opensea'
-import icon_rarible from './iicons/rarible'
-import icon_instagram from './iicons/instagram'
-import icon_email from './iicons/email'
+import icon_twitter from './icons/twitter'
+import icon_discord from './icons/discord'
+import icon_opensea from './icons/opensea'
+import icon_rarible from './icons/rarible'
+import icon_instagram from './icons/instagram'
+import icon_email from './icons/email'
 
 import type { SocialLink } from '@/types'
 import socialLinks from './socials.json'
@@ -21,7 +21,13 @@ const transform = {
 export const rarible: SocialLink = {
 	...socialLinks.rarible,
 	...icon_rarible,
-	...transform,
+	transform: {
+		...transform.transform,
+		translate: {
+			x: 5,
+			y: 5,
+		},
+	},
 }
 
 export const twitter: SocialLink = {
