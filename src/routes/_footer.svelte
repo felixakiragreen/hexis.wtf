@@ -1,9 +1,8 @@
 <script lang="ts">
 	import { stitch } from '@/ui'
-	import Content from '$lib/Content.svelte'
-	import Socials from '$lib/Social/index.svelte'
-	import Box from '$lib/Box.svelte'
-	import Stack from '$lib/Stack.svelte'
+	import Content from '@/lib/bbonds/Content.svelte'
+	import Box from '@/lib/aatoms/Box.svelte'
+	import Stack from '@/lib/bbonds/Stack.svelte'
 
 	const ss = stitch({
 		backgroundColor: '$background',

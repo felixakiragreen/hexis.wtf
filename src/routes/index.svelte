@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Hero from '@/lib/Hero.svelte'
-	import Season1Collection from '@/lib/Season1Collection.svelte'
+	import Hero from '@/lib/ccomps/Hero.svelte'
+	import Season1Collection from '@/lib/ccomps/Season1Collection.svelte'
 
 	import { stitch } from '@/ui'
 

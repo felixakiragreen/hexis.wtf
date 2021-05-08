@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { stitch } from '@/ui'
-	import Content from '$lib/Content.svelte'
-	import Socials from '$lib/Social/index.svelte'
-	import Box from '$lib/Box.svelte'
+	import Content from '@/lib/bbonds/Content.svelte'
+	import Socials from '@/lib/ssocial/index.svelte'
+	import Box from '@/lib/aatoms/Box.svelte'
 
 	const ss = stitch({
 		backgroundColor: '$background',
@@ -19,7 +19,7 @@
 		},
 	})
 
-	console.log(ss())
+	// console.log(ss())
 </script>
 
 <header class={ss()}>
