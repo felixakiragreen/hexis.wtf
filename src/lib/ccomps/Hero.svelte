@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { stitch } from '@/ui'
-	import Content from '$lib/Content.svelte'
-	import Img from '$lib/Img.svelte'
-	import Box from '$lib/Box.svelte'
-	import Stack from '$lib/Stack.svelte'
+	import Content from '@/lib/bbonds/Content.svelte'
+	import Img from '@/lib/aatoms/Image.svelte'
+	import Box from '@/lib/aatoms/Box.svelte'
+	import Stack from '@/lib/bbonds/Stack.svelte'
 
 	import hexisLogo from '@/assets/hexis-1920-no-bg.svg'
 
@@ -64,23 +64,28 @@
 		<Img
 			src={hexisLogo}
 			alt="Hexis Logo"
-			css={{ size: '$96', position: 'absolute', top: '$-16', left: '$-16' }} />
+			css={{ size: '$96', position: 'absolute', top: '$-16', left: '$-16' }}
+		/>
 		<Img
 			src={hexisLogo}
 			alt="Hexis Logo"
-			css={{ size: '$32', position: 'absolute', top: '$16', right: '$16', blur: '2px' }} />
+			css={{ size: '$32', position: 'absolute', top: '$16', right: '$16', blur: '2px' }}
+		/>
 		<Img
 			src={hexisLogo}
 			alt="Hexis Logo"
-			css={{ size: '$56', position: 'absolute', bottom: '$12', left: '$-32' }} />
+			css={{ size: '$56', position: 'absolute', bottom: '$12', left: '$-32' }}
+		/>
 		<Img
 			src={hexisLogo}
 			alt="Hexis Logo"
-			css={{ size: '$160', position: 'absolute', bottom: '$-32', right: '$-128' }} />
+			css={{ size: '$160', position: 'absolute', bottom: '$-32', right: '$-128' }}
+		/>
 		<Img
 			src={hexisLogo}
 			alt="Hexis Logo"
-			css={{ size: '$20', position: 'absolute', bottom: '$-24', left: '$12', blur: '2px' }} />
+			css={{ size: '$20', position: 'absolute', bottom: '$-24', left: '$12', blur: '2px' }}
+		/>
 
 		<Stack space="md">
 			<Box cls={ss1}>

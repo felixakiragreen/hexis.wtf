@@ -1,6 +1,6 @@
 <script>
 	import { stitch } from '@/ui'
-	import Box from './Box.svelte'
+	import Box from '../aatoms/Box.svelte'
 
 	export let css = null
 	export let space = null

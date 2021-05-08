@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { stitch } from '@/ui'
-	import Content from '$lib/Content.svelte'
-	import Img from '$lib/Img.svelte'
-	import Box from '$lib/Box.svelte'
-	import Stack from '$lib/Stack.svelte'
-	import Text from '$lib/Text.svelte'
+	import Content from '@/lib/bbonds/Content.svelte'
+	import Image from '@/lib/aatoms/Image.svelte'
+	import Box from '@/lib/aatoms/Box.svelte'
+	import Stack from '@/lib/bbonds/Stack.svelte'
+	import Text from '@/lib/aatoms/Text.svelte'
 
-	import HexBackground from '$lib/Social/HexBackground.svelte'
+	import HexBackground from '@/lib/ssocial/HexBackground.svelte'
 
 	import { map, take, takeRight } from 'lodash'
 	import { addWeeks, isBefore } from 'date-fns'
