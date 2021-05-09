@@ -3,7 +3,11 @@
 	import Content from '@/lib/bonds/Content.svelte'
 	import Img from '@/lib/atoms/Image.svelte'
 	import Box from '@/lib/atoms/Box.svelte'
+	import Inline from '@/lib/bonds/Inline.svelte'
 	import Stack from '@/lib/bonds/Stack.svelte'
+	import Text from '@/lib/bonds/Text.svelte'
+
+	import Icon, { ChevronDoubleDown } from 'svelte-hero-icons'
 
 	import hexisLogo from '@/assets/hexis-1920-no-bg.svg'
 
@@ -11,7 +15,7 @@
 		// backgroundColor: '$red600',
 		// color: '$foreground',
 		position: 'relative',
-		minHeight: '$screen-h',
+		minHeight: 'calc(100vh - 96px)',
 		minWidth: '$screen-w',
 
 		'& section': {
@@ -27,23 +31,19 @@
 
 	const ss1 = stitch({
 		mt: '$32',
-		bg: '$red400',
+		// bg: '$red400',
+		maxWidth: '$2xl',
 		textAlign: 'center',
 
 		'& h1': {
 			text: '$9xl',
-		},
-
-		'& p': {
-			text: '$lg',
-			maxWidth: '$2xl',
 		},
 	})
 
 	const ss2 = stitch({
 		p: '$4',
 		borderRadius: '$sm',
-		bg: '$red200',
+		// bg: '$red200',
 		// textAlign: 'center',
 		border: '1px solid $foreground',
 
@@ -58,7 +58,7 @@
 	})
 </script>
 
-<div class={ss()}>
+<Box cls={ss}>
 
 	<Content css={{}}>
 		<Img
@@ -89,22 +89,29 @@
 
 		<Stack space="md">
 			<Box cls={ss1}>
-				<h1>hexis</h1>
+				<Text as="h1" size="9xl">hexis</Text>
 
-				<p>
+				<Text as="p" size="lg">
 					An experiment in shape and dimension. The generative madness of an algorithm with the soft
 					guidance of the artist's hand.
 					<br />
 					Catch a new episode each friday at 09:00 et.
-				</p>
+				</Text>
 			</Box>
 
-			<Box cls={ss2}>
+			<!-- <Box cls={ss2}>
 				<p>join the community of hexagon 💚ers</p>
 				<a href="">+Follow on Twitter</a>
-			</Box>
+			</Box> -->
 		</Stack>
 
 	</Content>
 
-</div>
+	<Inline
+		align="center"
+		css={{ position: 'absolute', bottom: '$8', left: 0, right: 0, '> *': { size: '$12' } }}
+	>
+		<Icon src={ChevronDoubleDown} />
+	</Inline>
+
+</Box>
