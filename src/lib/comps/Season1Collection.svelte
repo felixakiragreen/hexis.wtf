@@ -4,7 +4,7 @@
 	import Image from '@/lib/atoms/Image.svelte'
 	import Box from '@/lib/atoms/Box.svelte'
 	import Stack from '@/lib/bonds/Stack.svelte'
-	import Text from '@/lib/atoms/Text.svelte'
+	import Text from '@/lib/bonds/Text.svelte'
 
 	import Hexagon from '@/lib/bonds/Hexagon.svelte'
 
@@ -112,8 +112,8 @@
 <Content>
 
 	<Box css={{ textAlign: 'center', py: '$8' }}>
-		<h2>season 01</h2>
-		<p>a cube finds its way</p>
+		<Text as="h2" size="4xl">season 01</Text>
+		<Text as="p" size="lg">a cube finds its way</Text>
 	</Box>
 
 	<Box cls={ss1}>
@@ -130,7 +130,6 @@
 
 		{#each last3 as episode}
 			<Box css={{ size: '$100%' }}>
-
 				<Hexagon />
 			</Box>
 		{/each}
