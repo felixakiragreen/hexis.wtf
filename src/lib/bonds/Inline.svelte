@@ -23,13 +23,13 @@
 			},
 			align: {
 				leading: {
-					alignItems: 'flex-start',
+					justifyContent: 'flex-start',
 				},
 				trailing: {
-					alignItems: 'flex-end',
+					justifyContent: 'flex-end',
 				},
 				center: {
-					alignItems: 'center',
+					justifyContent: 'center',
 				},
 			},
 			// alignV: {
