@@ -2,7 +2,7 @@
 	import { stitch } from '@/ui'
 	import Hexagon from './Hexagon.svelte'
 	import Box from '../atoms/Box.svelte'
-	import Link from '../atoms/Link.svelte'
+	import Anchor from '../atoms/Anchor.svelte'
 
 	export let url
 	export let hex
@@ -24,7 +24,7 @@
 
 <!-- prettier-ignore -->
 
-<Link
+<Anchor
 	{url}
 	newTab
 	cls={ss}
@@ -41,4 +41,4 @@
 			<path d={path} id="foreground" fill="var(--fill)" />
 		</g>
 	</Hexagon>
-</Link>
+</Anchor>
