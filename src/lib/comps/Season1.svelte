@@ -14,7 +14,15 @@
 	// let items = new Array(53)
 	const startOfYear = new Date(2021, 0, 1)
 
-	const items = map(new Array(53), (value, index) => {
+	type Episode = {
+		id: string
+		episode: string
+		title: string
+		date: Date
+		past: boolean
+	}
+
+	const items: Episode[] = map(new Array(53), (value, index) => {
 		const episode = index + 1
 		const ep = `00${episode}`.slice(-2)
 		const date = addWeeks(startOfYear, index)
@@ -103,8 +111,8 @@
 		// },
 	})
 
-	const first50 = take(items, 50)
-	const last3 = takeRight(items, 3)
+	const first50: Episode[] = take(items, 50)
+	const last3: Episode[] = takeRight(items, 3)
 </script>
 
 <!-- <div> -->
