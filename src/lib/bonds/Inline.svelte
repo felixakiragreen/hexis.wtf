@@ -5,11 +5,13 @@
 	export let css = null
 	export let space = null
 	export let align = null
+	export let alignV = null
+	export let collapseBelow = null
 
 	const ss = stitch({
 		display: 'flex',
-		flexDirection: 'row',
-		flexWrap: 'wrap',
+		// flexDirection: 'row',
+		// flexWrap: 'wrap',
 
 		variants: {
 			space: {
@@ -32,17 +34,46 @@
 					justifyContent: 'center',
 				},
 			},
-			// alignV: {
-			// 	top: {
-			// 		alignItems: 'flex-start',
-			// 	},
-			// 	bottom: {
-			// 		alignItems: 'flex-end',
-			// 	},
-			// 	center: {
-			// 		alignItems: 'center',
-			// 	},
-			// },
+			alignV: {
+				top: {
+					alignItems: 'start',
+				},
+				bottom: {
+					alignItems: 'end',
+				},
+				center: {
+					alignItems: 'center',
+				},
+				baseline: {
+					alignItems: 'baseline',
+				},
+			},
+			collapseBelow: {
+				sm: {
+					'@initial': {
+						flexDirection: 'column',
+					},
+					'@sm': {
+						flexDirection: 'row',
+					},
+				},
+				md: {
+					'@initial': {
+						flexDirection: 'column',
+					},
+					'@md': {
+						flexDirection: 'row',
+					},
+				},
+				lg: {
+					'@initial': {
+						flexDirection: 'column',
+					},
+					'@lg': {
+						flexDirection: 'row',
+					},
+				},
+			},
 		},
 
 		defaultVariants: {
@@ -56,6 +87,6 @@
 	// console.log({ css }, ss({ color, css }))
 </script>
 
-<Box cls={ss} vrt={{ space, align }} {css}>
+<Box cls={ss} vrt={{ space, align, alignV, collapseBelow }} {css}>
 	<slot />
 </Box>
