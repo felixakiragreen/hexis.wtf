@@ -5,6 +5,7 @@
 	export let css = null
 	export let space = null
 	export let align = null
+	export let alignV = null
 
 	const ss = stitch({
 		display: 'flex',
@@ -42,18 +43,21 @@
 				center: {
 					alignItems: 'center',
 				},
+				baseline: {
+					alignItems: 'baseline',
+				},
 			},
-			// alignV: {
-			// 	top: {
-			// 		alignItems: 'flex-start',
-			// 	},
-			// 	bottom: {
-			// 		alignItems: 'flex-end',
-			// 	},
-			// 	center: {
-			// 		alignItems: 'center',
-			// 	},
-			// },
+			alignV: {
+				top: {
+					justifyContent: 'start',
+				},
+				bottom: {
+					justifyContent: 'end',
+				},
+				center: {
+					justifyContent: 'center',
+				},
+			},
 		},
 
 		defaultVariants: {
@@ -67,6 +71,6 @@
 	// console.log({ css }, ss({ color, css }))
 </script>
 
-<Box cls={ss} vrt={{ space, align }} {css}>
+<Box cls={ss} vrt={{ space, align, alignV }} {css}>
 	<slot />
 </Box>
