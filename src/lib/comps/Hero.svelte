@@ -8,18 +8,17 @@
 	import Text from '@/lib/bonds/Text.svelte'
 	import Link from '@/lib/bonds/Link.svelte'
 
-	import { twitter } from '@/lib/datum/socials.json'
+	import { twitter, discord } from '@/lib/datum/socials.json'
 
 	import Icon, { ChevronDoubleDown } from 'svelte-hero-icons'
-
-	import hexisLogo from '@/assets/hexis-1920-no-bg.svg'
 
 	const ss = stitch({
 		// backgroundColor: '$red600',
 		// color: '$foreground',
-		position: 'relative',
+		// position: 'relative',
 		minHeight: 'calc(100vh - 96px)',
 		minWidth: '$screen-w',
+		// overflowX: 'hidden',
 
 		'& section': {
 			position: 'relative',
@@ -45,7 +44,7 @@
 	})
 
 	const ss2 = stitch({
-		p: '$4',
+		p: '$6',
 		borderRadius: '$sm',
 		// bg: '$red200',
 		// textAlign: 'center',
@@ -64,36 +63,8 @@
 
 <Box cls={ss}>
 
-	<Content css={{ position: 'relative' }}>
-		<Box css={{ zIndex: 1 }}>
-			<Img
-				src={hexisLogo}
-				alt="Hexis Logo"
-				css={{ size: '$96', position: 'absolute', top: '$-16', left: '$-16' }}
-			/>
-			<Img
-				src={hexisLogo}
-				alt="Hexis Logo"
-				css={{ size: '$32', position: 'absolute', top: '$16', right: '$16', blur: '2px' }}
-			/>
-			<Img
-				src={hexisLogo}
-				alt="Hexis Logo"
-				css={{ size: '$56', position: 'absolute', bottom: '$12', left: '$-32' }}
-			/>
-			<Img
-				src={hexisLogo}
-				alt="Hexis Logo"
-				css={{ size: '$160', position: 'absolute', bottom: '$-32', right: '$-128' }}
-			/>
-			<Img
-				src={hexisLogo}
-				alt="Hexis Logo"
-				css={{ size: '$20', position: 'absolute', bottom: '$-24', left: '$12', blur: '2px' }}
-			/>
-		</Box>
-
-		<Stack space="md">
+	<Content css={{ overflowY: 'visible' }}>
+		<Stack space="3xl" align="center">
 			<Box cls={ss1}>
 				<Text as="h1" size="9xl">hexis</Text>
 
@@ -103,12 +74,17 @@
 					<br />
 					Catch a new episode each friday at 09:00 et.
 				</Text>
-				<Link url="#about">+Read more</Link>
+				<Link url="#about" css={{ fontWeight: '$bold', text: '$xl', display: 'block' }}>
+					+Read more
+				</Link>
 			</Box>
 
 			<Box cls={ss2}>
-				<p>join the community of hexagon 💚ers</p>
-				<Link newTab url={twitter.url}>+Follow on Twitter</Link>
+				<Inline space="md">
+					<Text>join the community of hexagon 💚ers</Text>
+					<Link newTab url={twitter.url}>+Follow on Twitter</Link>
+					<Link newTab url={discord.url}>+Join the Discord</Link>
+				</Inline>
 			</Box>
 		</Stack>
 
@@ -116,7 +92,7 @@
 
 	<Inline
 		align="center"
-		css={{ position: 'absolute', bottom: '$8', left: 0, right: 0, zIndex: -1, '> *': { size: '$12' } }}
+		css={{ position: 'absolute', bottom: '$4', left: 0, right: 0, zIndex: -1, '> *': { size: '$8' } }}
 	>
 		<Icon src={ChevronDoubleDown} />
 	</Inline>
