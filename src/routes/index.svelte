@@ -1,18 +1,23 @@
 <script lang="ts">
+	import { stitch } from '@/ui'
+
 	import Hero from '@/lib/comps/Hero.svelte'
 	import Season1 from '@/lib/comps/Season1.svelte'
 	import About from '@/lib/comps/About.svelte'
-
-	import { stitch } from '@/ui'
+	import FloatingCubes from '@/lib/comps/FloatingCubes.svelte'
 
 	const ss = stitch({
 		// backgroundColor: '$background',
 		color: '$foreground',
-		position: 'relative',
+		// position: 'relative',
+		// overflowX: 'hidden',
+		// maxWidth: '$screen-w',
 	})
 </script>
 
 <main class={ss()}>
+
+	<FloatingCubes />
 
 	<Hero />
 
