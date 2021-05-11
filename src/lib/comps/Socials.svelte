@@ -22,6 +22,20 @@
 	// 		// size: '$16',
 	// 	},
 	// })
+
+	export let space = 'sm'
+	export let align = null
+	export let size = 'md'
+
+	const iconSizes = {
+		sm: '$8',
+		md: '$12',
+		lg: '$16',
+		xl: '$20',
+		'2xl': '$24',
+	}
+
+	$: iconSize = iconSizes[size] || size
 </script>
 
 <!-- <Box cls={ss}>
@@ -30,7 +44,7 @@
 	{/each}
 </Box> -->
 
-<Inline css={{ '> *': { size: '$16' } }} space="sm">
+<Inline css={{ '> *': { size: iconSize } }} {space} {align}>
 	{#each listSocials as social}
 		<HexIcon {...social} />
 	{/each}
