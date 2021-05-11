@@ -5,9 +5,14 @@
 	import Box from '@/lib/atoms/Box.svelte'
 	import Stack from '@/lib/bonds/Stack.svelte'
 	import Inline from '@/lib/bonds/Inline.svelte'
+	import Text from '@/lib/bonds/Text.svelte'
+	import Link from '@/lib/bonds/Link.svelte'
 
 	const ss = stitch({
-		backgroundColor: '$background',
+		// backgroundColor: '$background',
+		color: '$foreground',
+		position: 'relative',
+		zIndex: 100,
 
 		'& p': {
 			color: '$muted',
@@ -26,17 +31,19 @@
 
 <header class={ss()}>
 	<Content css={{ position: 'relative' }}>
-		<!-- <div>
-			<p>
-				new episode every
-				<b>friday — 09:00 et</b>
-			</p>
 
-		</div> -->
 		<!-- <Box css={{ position: 'absolute', top: '$4', right: '$0' }}> -->
 		<!-- </Box> -->
-		<Inline align="center">
-			<Socials />
+		<Inline align="center" alignV="center" collapseBelow="lg" space="sm">
+			<Text>
+				new episode every
+				<b>friday — 09:00 et</b>
+			</Text>
+			<Box>
+				<Link url="#season01">Season 1</Link>
+				<Link url="#about">About</Link>
+			</Box>
+			<Socials size="sm" />
 		</Inline>
 	</Content>
 </header>
