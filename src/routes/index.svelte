@@ -1,12 +1,14 @@
 <script lang="ts">
 	import Hero from '@/lib/comps/Hero.svelte'
-	import Season1Collection from '@/lib/comps/Season1Collection.svelte'
+	import Season1 from '@/lib/comps/Season1.svelte'
+	import About from '@/lib/comps/About.svelte'
 
 	import { stitch } from '@/ui'
 
 	const ss = stitch({
-		backgroundColor: '$background',
+		// backgroundColor: '$background',
 		color: '$foreground',
+		position: 'relative',
 	})
 </script>
 
@@ -14,7 +16,9 @@
 
 	<Hero />
 
-	<Season1Collection />
+	<Season1 />
+
+	<About />
 
 	<!-- <h1 class="desktop">season 01 begins</h1>
 	<h1 class="mobile">s01 begins</h1>
