@@ -3,7 +3,6 @@
 	import Content from '@/lib/bonds/Content.svelte'
 	import Box from '@/lib/atoms/Box.svelte'
 	import Stack from '@/lib/bonds/Stack.svelte'
-	import Socials from '@/lib/comps/Socials.svelte'
 	import Text from '@/lib/bonds/Text.svelte'
 	import Link from '@/lib/bonds/Link.svelte'
 
