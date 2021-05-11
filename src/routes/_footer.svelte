@@ -4,7 +4,7 @@
 </script>
 
 <footer>
-	<Content css={{ color: '$foreground', py: '$12' }}>
+	<Content css={{ color: '$foreground', my: '$16' }}>
 		<Socials align="center" size="lg" />
 	</Content>
 </footer>
