@@ -9,7 +9,7 @@
 	import Hexagon from '@/lib/bonds/Hexagon.svelte'
 
 	import { map, take, takeRight } from 'lodash'
-	import { addWeeks, isBefore } from 'date-fns'
+	import { addWeeks, isBefore, format } from 'date-fns'
 
 	// let items = new Array(53)
 	const startOfYear = new Date(2021, 0, 1)
@@ -38,84 +38,50 @@
 	console.log({ items })
 
 	const ss1 = stitch({
-		backgroundColor: '$red600',
-
 		display: 'flex',
 		flexDirection: 'row',
 		flexWrap: 'wrap',
 		justifyContent: 'center',
 
-		// display: 'grid',
-		// gridTemplateRows: 'repeat(auto-fill, 1fr)',
-		// gridTemplateColumns: 'repeat(5, 1fr)',
-		// color: '$foreground',
-		// position: 'relative',
-		// minHeight: '$screen-h',
-		// minWidth: '$screen-w',
-
-		// '& section': {
-		// 	position: 'relative',
-		// 	height: '$full',
-		// 	// minHeight: '$screen-h',
-		// 	// minWidth: '$screen-w',
-		// 	display: 'flex',
-		// 	alignItems: 'center',
-		// 	justifyContent: 'center',
-		// },
-
-		// 	#hexGrid{
-		// pb: '4.4%',
-		// }
-		'& div': {
+		'& > div': {
 			width: '20%' /* = 100 / 5 */,
 			mb: '-3.2%',
 		},
-		'& div:nth-child(9n+6)': {
+		'& > div:nth-child(9n+6)': {
 			/* first hexagon of even rows */
 			ml: '10%' /* = width of .hex / 2  to indent even rows */,
 		},
-		'& div:nth-child(9n+9)': {
+		'& > div:nth-child(9n+9)': {
 			/* last hexagon of even rows */
 			mr: '10%' /* = width of .hex / 2  to indent even rows */,
 		},
-		// '& div:nth-child(5n + 1)': {
-		// 	ml: '$24',
-		// },
 	})
 
 	const ss2 = stitch({
-		backgroundColor: '$orange600',
-
 		display: 'flex',
 		flexDirection: 'row',
 		flexWrap: 'wrap',
 		justifyContent: 'center',
 
-		// 	#hexGrid{
 		pb: '4.4%',
-		// }
-		'& div': {
+
+		'& > div': {
 			width: '20%' /* = 100 / 5 */,
 			mb: '-3.2%',
 		},
-		'& div:nth-child(1)': {
+		'& > div:nth-child(1)': {
 			/* first hexagon of even rows */
 			ml: '25%' /* = width of .hex / 2  to indent even rows */,
 		},
-		'& div:nth-child(2)': {
+		'& > div:nth-child(2)': {
 			/* last hexagon of even rows */
 			mr: '25%' /* = width of .hex / 2  to indent even rows */,
 		},
-		// '& div:nth-child(5n + 1)': {
-		// 	ml: '$24',
-		// },
 	})
 
 	const first50: Episode[] = take(items, 50)
 	const last3: Episode[] = takeRight(items, 3)
 </script>
-
-<!-- <div> -->
 
 <Content>
 
@@ -127,9 +93,12 @@
 	<Box cls={ss1}>
 
 		{#each first50 as episode}
-			<Box css={{ size: '$100%' }}>
-
-				<Hexagon fill={episode.past ? '#00ff00' : ''} />
+			<Box css={{ position: 'relative', size: '$100%' }}>
+				<Hexagon fill={episode.past ? 'var(--colors-green900)' : ''} />
+				<Stack css={{ position: 'absolute', surrounding: 0 }} align="center" alignV="center">
+					<Text>{episode.title}</Text>
+					<Text css={{ text: '$sm', color: '$muted' }}>{format(episode.date, '1yyyy·MM·dd')}</Text>
+				</Stack>
 			</Box>
 		{/each}
 
@@ -137,8 +106,12 @@
 	<Box cls={ss2}>
 
 		{#each last3 as episode}
-			<Box css={{ size: '$100%' }}>
-				<Hexagon />
+			<Box css={{ position: 'relative', size: '$100%' }}>
+				<Hexagon fill={episode.past ? 'var(--colors-green900)' : ''} />
+				<Stack css={{ position: 'absolute', surrounding: 0 }} align="center" alignV="center">
+					<Text>{episode.title}</Text>
+					<Text css={{ text: '$sm', color: '$muted' }}>{format(episode.date, '1yyyy·MM·dd')}</Text>
+				</Stack>
 			</Box>
 		{/each}
 
