@@ -69,7 +69,7 @@
 		<Stack space="3xl" align="center">
 			<Box cls={ss1}>
 				<!-- <Text as="h1" size="9xl">hexis</Text> -->
-				<Img src={hexisLogo} alt="Hexis Logo" css={{ mt: '$36', mb: '$0' }} />
+				<Img src={hexisLogo} alt="Hexis Logo" css={{ mt: '$32', mb: '$4' }} />
 
 				<Text as="p" size="lg">
 					An experiment in shape and dimension. The generative madness of an algorithm with the soft
