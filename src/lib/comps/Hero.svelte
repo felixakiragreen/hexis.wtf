@@ -10,6 +10,8 @@
 
 	import { twitter, discord } from '@/lib/datum/socials.json'
 
+	import hexisLogo from '@/assets/hexis-logo.svg'
+
 	import Icon, { ChevronDoubleDown } from 'svelte-hero-icons'
 
 	const ss = stitch({
@@ -32,15 +34,15 @@
 	})
 
 	const ss1 = stitch({
-		mt: '$10',
+		// mt: '$10',
 		// bg: '$red400',
 		maxWidth: '$2xl',
 		textAlign: 'center',
 		zIndex: 2,
 
-		'& h1': {
-			text: '$9xl',
-		},
+		// '& h1': {
+		// 	text: '$9xl',
+		// },
 	})
 
 	const ss2 = stitch({
@@ -66,7 +68,8 @@
 	<Content css={{ overflowY: 'visible' }}>
 		<Stack space="3xl" align="center">
 			<Box cls={ss1}>
-				<Text as="h1" size="9xl">hexis</Text>
+				<!-- <Text as="h1" size="9xl">hexis</Text> -->
+				<Img src={hexisLogo} alt="Hexis Logo" css={{ mt: '$36', mb: '$0' }} />
 
 				<Text as="p" size="lg">
 					An experiment in shape and dimension. The generative madness of an algorithm with the soft
@@ -90,11 +93,11 @@
 
 	</Content>
 
-	<Inline
+	<!-- <Inline
 		align="center"
 		css={{ position: 'absolute', bottom: '$4', left: 0, right: 0, zIndex: -1, '> *': { size: '$8' } }}
 	>
 		<Icon src={ChevronDoubleDown} />
-	</Inline>
+	</Inline> -->
 
 </Box>
