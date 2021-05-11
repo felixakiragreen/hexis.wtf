@@ -1,7 +1,7 @@
 <script>
 	import { stitch } from '@/ui'
 
-	const buttonStyles = stt({
+	const buttonStyles = stitch({
 		backgroundColor: '$colors$felixgreen',
 		borderRadius: '9999px',
 		fontSize: '$3',
