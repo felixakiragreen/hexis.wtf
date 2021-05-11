@@ -19,15 +19,26 @@
 					color: '$highlight',
 					textDecoration: 'none',
 					display: 'inline-block',
-					transition: '$1',
+					// transition: '$1',
+
+					'& span': {
+						display: 'inline-block',
+						transition: '$1',
+						py: '$1',
+						my: '$-1',
+					},
+
 					'&:hover': {
 						// backgroundColor: '$felixgreen',
 						// color: '$indigo',
-						backgroundColor: '$highlight',
 						color: '$background',
 						cursor: 'pointer',
-						px: '$1',
-						mx: '$-1',
+
+						'& span': {
+							backgroundColor: '$highlight',
+							px: '$2',
+							mx: '$-2',
+						},
 					},
 				},
 			},
@@ -40,5 +51,7 @@
 </script>
 
 <Anchor cls={ss} vrt={{ appearance }} {css} {url} {newTab}>
-	<slot />
+	<span>
+		<slot />
+	</span>
 </Anchor>
