@@ -34,16 +34,14 @@
 
 		<!-- <Box css={{ position: 'absolute', top: '$4', right: '$0' }}> -->
 		<!-- </Box> -->
-		<Inline align="center" alignV="center" collapseBelow="lg" space="sm">
+		<Inline align="trailing" alignV="center" collapseBelow="lg" space="xl">
 			<Text>
-				new episode every
-				<b>friday — 09:00 et</b>
+				new episodes
+				<b>friday @ 09:00 et</b>
 			</Text>
-			<Box>
-				<Link url="#season01">Season 1</Link>
-				<Link url="#about">About</Link>
-			</Box>
-			<Socials size="sm" />
+			<Link url="#season01">Season 1</Link>
+			<Link url="#about">About</Link>
+			<Socials size="sm" space="no" />
 		</Inline>
 	</Content>
 </header>
