@@ -1,6 +1,7 @@
 body {
 	margin: 0;
 	padding: 0;
+	background: var(--colors-grey800);
 	font-family: 'SFMono', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,
 		Cantarell, 'Helvetica Neue', sans-serif;
 }
