@@ -111,7 +111,7 @@
 
 <Content>
 
-	<Box css={{ textAlign: 'center', py: '$8' }}>
+	<Box css={{ textAlign: 'center', py: '$8' }} id="season01">
 		<Text as="h2" size="4xl">season 01</Text>
 		<Text as="p" size="lg">a cube finds its way</Text>
 	</Box>
