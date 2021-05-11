@@ -55,7 +55,6 @@
 			},
 			mdx: {
 				h1: {
-					fontFamily: '$main',
 					fontWeight: '$bold',
 					'@initial': {
 						text: '$4xl',
@@ -65,7 +64,6 @@
 					},
 				},
 				h2: {
-					fontFamily: '$main',
 					fontWeight: '$bold',
 					my: '$3',
 					'@initial': {
@@ -77,31 +75,26 @@
 				},
 				h3: {
 					text: '$3xl',
-					fontFamily: '$main',
 					fontWeight: '$bold',
 				},
 				h4: {
 					text: '$2xl',
-					fontFamily: '$main',
 					fontWeight: '$bold',
 				},
 				h5: {
 					text: '$xl',
-					fontFamily: '$main',
 					fontWeight: '$bold',
 					mt: '$12',
 					mb: '$4',
 				},
 				h6: {
 					text: '$lg',
-					fontFamily: '$main',
 					fontWeight: '$bold',
 				},
 				p: {
 					display: 'block',
 					py: '$2',
 					text: '$lg',
-					fontFamily: '$main',
 					fontWeight: '$semi',
 					lineHeight: '$2xl',
 				},
