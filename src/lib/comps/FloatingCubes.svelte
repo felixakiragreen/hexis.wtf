@@ -11,17 +11,17 @@
 			<Img
 				src={hexisLogo}
 				alt="Hexis Logo"
-				css={{ size: '$80', position: 'absolute', top: '$0', left: '$-16' }}
+				css={{ size: '$80', position: 'absolute', top: '$-4', left: '$-12' }}
 			/>
 			<Img
 				src={hexisLogo}
 				alt="Hexis Logo"
-				css={{ size: '$24', position: 'absolute', top: '$36', right: '$56', blur: '2px' }}
+				css={{ size: '$24', position: 'absolute', top: '$32', right: '$40', blur: '2px' }}
 			/>
 			<Img
 				src={hexisLogo}
 				alt="Hexis Logo"
-				css={{ size: '$56', position: 'absolute', bottom: '$72', left: '$-32' }}
+				css={{ size: '$56', position: 'absolute', bottom: '$72', left: '$-36' }}
 			/>
 			<Img
 				src={hexisLogo}
