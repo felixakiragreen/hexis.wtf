@@ -5,6 +5,7 @@
 	import Stack from '@/lib/bonds/Stack.svelte'
 	import Text from '@/lib/bonds/Text.svelte'
 	import Link from '@/lib/bonds/Link.svelte'
+	import ArtistStatement from '@/lib/datum/ArtistStatement.md'
 
 	const ss = stitch({
 		backgroundColor: '$background',
@@ -16,7 +17,6 @@
 	let readingMore = false
 
 	function toggleReading() {
-		console.log('toggle')
 		readingMore = !readingMore
 	}
 </script>
@@ -26,7 +26,7 @@
 <Box cls={ss} id="about">
 	<Content>
 		<Stack css={{ maxWidth: '$2xl', mx: 'auto' }}>
-			<Box css={{ py: '$8' }}>
+			<Box css={{ py: '$24' }}>
 				<Text as="p">
 					Within each <i>Hexis</i> the interplay of three flat shapes
 					invents the new overall shape of a hexagon, and movement
@@ -39,16 +39,19 @@
 					<Link>+Read {readingMore ? "less" : "more"}</Link>
 				</div>
 				{#if readingMore}
-					<Text as="p">
-						More
-					</Text>
+					<Box css={{ textAlign: "left", maxWidth: "$xl", mx: "auto" }}>
+						<ArtistStatement />
+					</Box>
+					<div on:click={toggleReading}>
+						<Link>+Close</Link>
+					</div>
 				{/if}
 			</Box>
-			<Box css={{ py: '$8' }}>
+			<Box css={{ py: '$48' }}>
 				<Text as="p">
-					<b>”<i>Hexis</i></b> means in one sense an activity ... <b>when one
+					<b>“<i>Hexis</i></b> means in one sense an activity ... <b>when one
 						things makes and another is made, there is between
-						them an act of making.“
+						them an act of making.”
 					</b>
 				</Text>
 				<Text>~ Artistotle, Metaphysics 5.1022b</Text>
