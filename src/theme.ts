@@ -10,8 +10,8 @@ const colors = {
 	//
 	background: '$grey800',
 	foreground: '$white',
-	highlight: '$indigo',
-	lowlight: '$felixgreen',
+	highlight: '$felixgreen',
+	lowlight: '$indigo',
 	muted: '$grey500',
 	faint: '$grey200',
 
