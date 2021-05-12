@@ -73,6 +73,8 @@ export const email: SocialLink = {
 	},
 }
 
+export const ambition = socialLinks.ambition
+
 export const socials: SocialLink[] = [
 	//
 	rarible,
