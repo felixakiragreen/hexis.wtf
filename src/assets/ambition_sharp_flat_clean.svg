@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" viewBox="0 0 1000 1000">
+  <defs/>
+  <path id="ambition_sharp_flat_clean" fill="none" d="M0 0h1000v1000H0z"/>
+  <path fill="#adfd2d" d="M500 0L67 250v500l216.5 125h433V625L933 500 716.5 375V125L500 0z"/>
+  <path fill="#010001" d="M716.5 125l-72.2-41.7L933 250v500l-433 250-216.5-125V625l433-250V125zM500 875l-108.3-62.5v-125L500 625l108.3 62.5v125L500 875zm0-500l-108.3-62.5v-125L500 125l108.3 62.5v125L500 375z"/>
+</svg>
