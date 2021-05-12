@@ -1,0 +1,26 @@
+{
+	"twitter": {
+		"url": "https://twitter.com/hexis_wtf",
+		"username": "@hexis_wtf"
+	},
+	"opensea": {
+		"url": "https://opensea.io/collection/hexis-wtf",
+		"username": "hexis-wtf"
+	},
+	"discord": {
+		"url": "https://discord.gg/6j65H7nqSd",
+		"username": "ambition.wtf"
+	},
+	"rarible": {
+		"url": "https://app.rarible.com/hexis_wtf?tab=collectibles",
+		"username": "hexis_wtf"
+	},
+	"email": {
+		"url": "mailto:email@ambition.wtf",
+		"username": "email@ambition.wtf"
+	},
+	"instagram": {
+		"url": "https://www.instagram.com/hexis_wtf",
+		"username": "hexis_wtf"
+	}
+}

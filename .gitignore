@@ -1,23 +1,5 @@
-# mac os
 .DS_Store
-
-# vscode
-.vscode/*
-*.code-workspace
-
-# node
-/node_modules/
-
-# sapper
-/__sapper__/
-/src/node_modules/@sapper/
-
-# yarn
-yarn-error.log
-.yarn/*
-!.yarn/releases
-!.yarn/plugins
-.pnp.*
-
-# cypress
-/cypress/screenshots/
+node_modules
+/.svelte-kit
+/build
+/functions
