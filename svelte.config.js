@@ -1,3 +1,4 @@
+// const pkg = require('./package.json')
 import { mdsvex } from 'mdsvex'
 import { mdsvexConfig } from './mdsvex.config.js'
 import preprocess from 'svelte-preprocess'
@@ -15,21 +16,25 @@ const config = {
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
 		//
-		// adapter: node({ out: 'build' }),
-		adapter: netlify(),
+		adapter: node(),
+		// adapter: netlify(),
 		//
 		vite: {
+			ssr: {
+				noExternal: ['lodash'],
+			},
 			resolve: {
 				// alias: [{ find: '@', replacement: '/src' }],
 				alias: {
 					'@': '/src',
 				},
 			},
-			build: {
-				outDir: 'build/',
-			},
+			// build: {
+			// 	outDir: 'build/',
+			// },
 			optimizeDeps: {
-				include: ['svelte-hero-icons'],
+				include: ['svelte-hero-icons', 'lodash'],
+				exclude: [],
 			},
 		},
 	},

@@ -9,4 +9,4 @@
   functions = "functions/"
 
 [build.environment]
-  NODE_VERSION = "15"
+  NODE_VERSION = "16"
