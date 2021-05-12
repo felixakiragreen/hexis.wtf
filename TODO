@@ -4,9 +4,13 @@ DO:
   [x] move the about to be .svx
   [x] fetch the images from opensea / rarible / IPFS?
   [x] add ambition logo to social links
-  [ ] add parallax effect to the Floating Cubes
+  [x] add parallax effect to the Floating Cubes
   [ ] add mobile responsiveness
   [ ] add if it's still for sale (I could check if owner is ambition?)
-  [ ] move the 2 cubes
-  [ ] On the first text blurb can we change "Catch a new episode each friday at 09:00 et." to "New episodes each friday at 09:00 et."
+  [x] move the 2 cubes
+  [x] On the first text blurb can we change "Catch a new episode each friday at 09:00 et." to "New episodes each friday at 09:00 et."
   [x] fix the FUCKING top glitch on ambition logo
+  [x] mirrored header?
+  [x] space between boxes
+  [x] transition/fly for more text
+  
