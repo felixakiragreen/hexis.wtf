@@ -3,9 +3,10 @@ DO:
     https://github.com/vitejs/vite/issues/2282
   [x] move the about to be .svx
   [x] fetch the images from opensea / rarible / IPFS?
-  [ ] add ambition logo to social links
+  [x] add ambition logo to social links
   [ ] add parallax effect to the Floating Cubes
   [ ] add mobile responsiveness
   [ ] add if it's still for sale (I could check if owner is ambition?)
   [ ] move the 2 cubes
   [ ] On the first text blurb can we change "Catch a new episode each friday at 09:00 et." to "New episodes each friday at 09:00 et."
+  [x] fix the FUCKING top glitch on ambition logo
