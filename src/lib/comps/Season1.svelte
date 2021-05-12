@@ -10,6 +10,8 @@
 	import Box from '@/lib/atoms/Box.svelte'
 	import Stack from '@/lib/bonds/Stack.svelte'
 	import Text from '@/lib/bonds/Text.svelte'
+	import Inline from '@/lib/bonds/Inline.svelte'
+	import Link from '@/lib/bonds/Link.svelte'
 
 	import Hexagon from '@/lib/bonds/Hexagon.svelte'
 
@@ -23,8 +25,10 @@
 		title: string
 		date: Date
 		past: boolean
-		url?: string
 		gif?: string
+		url?: string
+		urlOpenSea?: string
+		urlRarible?: string
 	}
 
 	const items: Episode[] = map(new Array(53), (value, index) => {
@@ -40,7 +44,7 @@
 		}
 	})
 
-	const ss1 = stitch({
+	const ssFirst50 = stitch({
 		display: 'flex',
 		flexDirection: 'row',
 		flexWrap: 'wrap',
@@ -60,7 +64,7 @@
 		},
 	})
 
-	const ss2 = stitch({
+	const ssLast3 = stitch({
 		display: 'flex',
 		flexDirection: 'row',
 		flexWrap: 'wrap',
@@ -87,14 +91,14 @@
 	$: first50 = take(items, 50)
 	$: last3 = takeRight(items, 3)
 
-	// $: assets =
-
 	onMount(async () => {
 		fetchOpenSeaAssets().then((results) => {
-			console.log({ results })
+			// console.log({ results })
 
 			forEach(results, (result) => {
-				const itemIndex = items.findIndex((episode) => episode.title === result.name)
+				const itemIndex = items.findIndex(
+					(episode) => episode.title === result.name
+				)
 
 				if (itemIndex >= 0) {
 					if (result.url && result.url !== '') {
@@ -103,41 +107,22 @@
 					if (result.gif && result.gif !== '') {
 						items[itemIndex].gif = result.gif
 					}
+					if (result.urlOpenSea && result.urlOpenSea !== '') {
+						items[itemIndex].urlOpenSea = result.urlOpenSea
+					}
+					if (result.urlRarible && result.urlRarible !== '') {
+						items[itemIndex].urlRarible = result.urlRarible
+					}
 				}
-
-				// 	'url',
-				// 	result.name
-				// )
-				// set(
-
-				// )
 			})
-			console.log('items', { items, first50, last3 })
+			// console.log('items', { items, first50, last3 })
 		})
-
-		// document.querySelector('video').addEventListener(
-		// 	'ended',
-		// 	function (e) {
-		// 		e.target.currentTime = 0
-		// 		e.target.play()
-		// 	},
-		// 	false
-		// )
 	})
 
-	function loop(e) {
-		e.target.currentTime = 0
-		e.target.play()
-	}
-
-	const ss3 = stitch({
+	const ssImgHex = stitch({
 		position: 'absolute',
-		top: 0,
-		left: 0,
-		right: 0,
-		// bottom: '3.2%',
-		bottom: 0,
-		clipPath: 'polygon(50% 0, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%)',
+		surrounding: 0,
+		clip: 'hexagon',
 
 		'& video': {
 			size: '$full',
@@ -149,9 +134,14 @@
 			pointerEvents: 'none',
 			transition: '$1',
 		},
+	})
 
-		'&:hover > img': {
-			opacity: 0.2,
+	const ssHex = stitch({
+		position: 'relative',
+		size: '$100%',
+		'& svg': {
+			display: 'block',
+			height: 'auto',
 		},
 	})
 </script>
@@ -163,35 +153,75 @@
 		<Text as="p" size="lg">a cube finds its way</Text>
 	</Box>
 
-	<Box cls={ss1}>
+	<Box cls={ssFirst50}>
 
 		{#each first50 as episode}
-			<Box
-				css={{ position: 'relative', size: '$100%', '& svg': { display: 'block', height: 'auto' } }}
-			>
-
+			<Box cls={ssHex}>
 				<Hexagon fill={'var(--colors-grey900)'} />
-				<Stack css={{ position: 'absolute', surrounding: 0 }} align="center" alignV="center">
-					<Text>{episode.title}</Text>
-					<Text css={{ text: '$sm', color: '$muted' }}>{format(episode.date, '1yyyy·MM·dd')}</Text>
-				</Stack>
-				<Box cls={ss3}>
+				<Box cls={ssImgHex}>
 					{#if episode.past && episode.gif}
 						<Image src={episode.gif} alt={episode.title} />
 					{/if}
 				</Box>
+				<Box
+					css={{ position: 'absolute', surrounding: 0, opacity: episode.past ? 0 : 1, transition: '$1', clip: 'hexagon', '&:hover': { opacity: 1 } }}
+				>
+					{#if episode.past}
+						<Box
+							css={{ position: 'absolute', surrounding: 0, background: 'rgba(10, 10, 9, 0.32)', backdropFilter: 'blur(4px)', clip: 'hexagon' }}
+						/>
+					{/if}
+
+					<Stack
+						css={{ position: 'absolute', surrounding: 0, text: '$sm' }}
+						align="center"
+						alignV="center"
+					>
+
+						<Text css={{ text: '$md', fontWeight: '$bold' }}>
+							{episode.title}
+						</Text>
+						<Text css={{ color: episode.past ? '$grey400' : '$muted' }}>
+							{format(episode.date, '1yyyy·MM·dd')}
+						</Text>
+
+						<Inline space="sm" css={{ textTransform: 'initial' }}>
+							{#if episode.urlOpenSea}
+								<Link url={episode.urlOpenSea} newTab appearance="blockinho">
+									opensea
+								</Link>
+							{/if}
+							{#if episode.urlOpenSea && episode.urlRarible}
+								<Text>·</Text>
+							{/if}
+							{#if episode.urlRarible}
+								<Link url={episode.urlRarible} newTab appearance="blockinho">
+									rarible
+								</Link>
+							{/if}
+						</Inline>
+
+					</Stack>
+				</Box>
+
 			</Box>
 		{/each}
 
 	</Box>
-	<Box cls={ss2}>
+	<Box cls={ssLast3}>
 
 		{#each last3 as episode}
 			<Box css={{ position: 'relative', size: '$100%' }}>
 				<Hexagon fill={'var(--colors-grey900)'} />
-				<Stack css={{ position: 'absolute', surrounding: 0 }} align="center" alignV="center">
+				<Stack
+					css={{ position: 'absolute', surrounding: 0 }}
+					align="center"
+					alignV="center"
+				>
 					<Text>{episode.title}</Text>
-					<Text css={{ text: '$sm', color: '$muted' }}>{format(episode.date, '1yyyy·MM·dd')}</Text>
+					<Text css={{ text: '$sm', color: '$muted' }}>
+						{format(episode.date, '1yyyy·MM·dd')}
+					</Text>
 				</Stack>
 			</Box>
 		{/each}
