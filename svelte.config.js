@@ -1,7 +1,7 @@
 import { mdsvex } from 'mdsvex'
 import { mdsvexConfig } from './mdsvex.config.js'
 import preprocess from 'svelte-preprocess'
-// import netlify from '@sveltejs/adapter-netlify'
+import netlify from '@sveltejs/adapter-netlify'
 import node from '@sveltejs/adapter-node'
 
 /** @type {import('@sveltejs/kit').Config} */
