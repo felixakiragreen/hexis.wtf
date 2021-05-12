@@ -94,12 +94,10 @@
 	onMount(async () => {
 		fetchOpenSeaAssets().then((results) => {
 			// console.log({ results })
-
 			results.forEach((result) => {
 				const itemIndex = items.findIndex(
 					(episode) => episode.title === result.name
 				)
-
 				if (itemIndex >= 0) {
 					if (result.url && result.url !== '') {
 						items[itemIndex].url = result.url
@@ -165,7 +163,7 @@
 <Content>
 
 	<Box css={{ textAlign: 'center', py: '$8' }} id="season01">
-		<Text as="h2" size="4xl">season 01</Text>
+		<Text as="h2" size="4xl" css={{ mb: '$-3' }}>season 01</Text>
 		<Text as="p" size="lg">a cube finds its way</Text>
 	</Box>
 
