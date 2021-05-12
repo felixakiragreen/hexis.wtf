@@ -39,7 +39,7 @@
 					dimension greater than the sum of its parts.
 				</Text>
 				<div on:click={toggleReading}>
-					<Link>+Read {readingMore ? "less" : "more"}</Link>
+					<Link>+ {readingMore ? "Close" : "Read"} artist statement</Link>
 				</div>
 				{#if readingMore}
 					<div transition:slide={{duration: 500, easing: quintInOut}}>
@@ -47,12 +47,13 @@
 							<ArtistStatement />
 						</Box>
 						<div on:click={toggleReading}>
-							<Link>+Close</Link>
+							<Link>+ Close</Link>
 						</div>
 					</div>
 				{/if}
 			</Box>
-			<Box css={{ py: '$48' }}>
+			<Box css={{ py: '$24', text: "$2xl" }}>
+				<Text css={{ color: "$felixgreen" }}>⬡</Text>
 				<Text as="p">
 					<b>“<i>Hexis</i></b> means in one sense an activity ... <b>when one
 						things makes and another is made, there is between
@@ -60,6 +61,9 @@
 					</b>
 				</Text>
 				<Text>~ Artistotle, Metaphysics 5.1022b</Text>
+				<br />
+				<br />
+				<Text css={{ color: "$felixgreen" }}>⬡</Text>
 			</Box>
 		</Stack>
 	</Content>
