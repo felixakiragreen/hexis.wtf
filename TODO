@@ -1,6 +1,8 @@
 DO:
   [ ] improve load flashing styles
-  [ ] move the about to be .svx
-  [ ] fetch the images from opensea / rarible / IPFS?
+  [x] move the about to be .svx
+  [x] fetch the images from opensea / rarible / IPFS?
   [ ] add ambition logo to social links
+  [ ] add parallax effect to the Floating Cubes
+
   
