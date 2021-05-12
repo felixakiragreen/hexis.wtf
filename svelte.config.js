@@ -16,8 +16,8 @@ const config = {
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
 		//
-		adapter: node(),
-		// adapter: netlify(),
+		// adapter: node(),
+		adapter: netlify(),
 		//
 		vite: {
 			ssr: {
