@@ -422,7 +422,15 @@ export const utils = {
 	bg: (config) => (value) => ({
 		backgroundColor: value,
 	}),
-	// filter: blur(10px);
+	clip: (config) => (value) => {
+		const values = {
+			hexagon: 'polygon(50% 0, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%)',
+		}
+
+		return {
+			clipPath: values[value] || value,
+		}
+	},
 }
 
 // --tw-space-y-reverse: 0;
