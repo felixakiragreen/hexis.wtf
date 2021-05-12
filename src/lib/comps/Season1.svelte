@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte'
 
-	import { map, take, takeRight, forEach, find, set } from 'lodash'
+	import { map, take, takeRight } from 'lodash'
 	import { addWeeks, isBefore, format } from 'date-fns'
 
 	import { stitch } from '@/ui'
@@ -95,7 +95,7 @@
 		fetchOpenSeaAssets().then((results) => {
 			// console.log({ results })
 
-			forEach(results, (result) => {
+			results.forEach((result) => {
 				const itemIndex = items.findIndex(
 					(episode) => episode.title === result.name
 				)
