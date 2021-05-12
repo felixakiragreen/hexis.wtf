@@ -168,7 +168,7 @@
 				>
 					{#if episode.past}
 						<Box
-							css={{ position: 'absolute', surrounding: 0, background: 'rgba(10, 10, 9, 0.32)', backdropFilter: 'blur(4px)', clip: 'hexagon' }}
+							css={{ position: 'absolute', surrounding: 0, background: 'rgba(10, 10, 9, 0.5)', backdropFilter: 'blur(2px)', clip: 'hexagon' }}
 						/>
 					{/if}
 
