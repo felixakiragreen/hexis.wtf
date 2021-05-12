@@ -1,2 +1,11 @@
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[build]
+  command = "yarn build"
+  publish = "dist"
+
 [build.environment]
   NODE_VERSION = "15"
