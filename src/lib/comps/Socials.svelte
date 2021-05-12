@@ -9,7 +9,10 @@
 	import { map } from 'lodash'
 	import type { SocialLink } from '@/types'
 
-	let listSocials: SocialLink[] = map(socials, (value: SocialLink, key, collection) => value)
+	let listSocials: SocialLink[] = map(
+		socials,
+		(value: SocialLink, key, collection) => value
+	)
 
 	// console.log({ listSocials })
 

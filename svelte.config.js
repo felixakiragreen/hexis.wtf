@@ -1,7 +1,8 @@
 import { mdsvex } from 'mdsvex'
 import { mdsvexConfig } from './mdsvex.config.js'
 import preprocess from 'svelte-preprocess'
-import netlify from '@sveltejs/adapter-netlify'
+// import netlify from '@sveltejs/adapter-netlify'
+import node from '@sveltejs/adapter-node'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -14,6 +15,7 @@ const config = {
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
 		//
+		// adapter: node({ out: 'build' }),
 		adapter: netlify(),
 		//
 		vite: {
@@ -22,6 +24,12 @@ const config = {
 				alias: {
 					'@': '/src',
 				},
+			},
+			build: {
+				outDir: 'build/',
+			},
+			optimizeDeps: {
+				include: ['svelte-hero-icons'],
 			},
 		},
 	},

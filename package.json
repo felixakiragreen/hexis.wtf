@@ -13,6 +13,7 @@
 	"devDependencies": {
 		"@stitches/core": "^0.1.9",
 		"@sveltejs/adapter-netlify": "next",
+		"@sveltejs/adapter-node": "^1.0.0-next.20",
 		"@sveltejs/kit": "next",
 		"date-fns": "^2.21.2",
 		"lodash": "^4.17.21",

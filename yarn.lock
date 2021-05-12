@@ -15,7 +15,7 @@
   resolved "https://registry.yarnpkg.com/@stitches/core/-/core-0.1.9.tgz#6cc42ae6052f6900f9add164232449ff8d62c4ba"
   integrity sha512-70gVb0uhgV6BOJmloirWEGZmofk/Hzr5yWlub1rtm4CvimD3Xl5xr9fVkjcTu+REC6ILCJCnlEP4WmilTfXNOA==
 
-"@sveltejs/adapter-netlify@^1.0.0-next.12":
+"@sveltejs/adapter-netlify@next":
   version "1.0.0-next.12"
   resolved "https://registry.yarnpkg.com/@sveltejs/adapter-netlify/-/adapter-netlify-1.0.0-next.12.tgz#54947cb94e2ee7e49228ad819c67069e78d89a54"
   integrity sha512-34+Xk2YmTDgDJWVliaZtAiDbtEsZurENwALxdD1dDQErxI0HPGZgmmwktLJjf2mU2/DcGJAXZxgq2RsGiDxAZA==
@@ -23,6 +23,11 @@
     "@sveltejs/kit" "1.0.0-next.103"
     esbuild "^0.11.18"
     toml "^3.0.0"
+
+"@sveltejs/adapter-node@^1.0.0-next.20":
+  version "1.0.0-next.20"
+  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-node/-/adapter-node-1.0.0-next.20.tgz#25ec7b7680d0bd3ad0ade76724f61adbd711f26b"
+  integrity sha512-ornNW289XN4TyY3tRXVGH38FxrqLsw1MHn4oq92T7U6EqnSbw/22waMZnPBQUxcj5GxZsXuuFjeBjn1BWt0x2A==
 
 "@sveltejs/kit@1.0.0-next.103":
   version "1.0.0-next.103"
