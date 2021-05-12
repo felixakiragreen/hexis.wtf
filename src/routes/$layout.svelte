@@ -1,5 +1,14 @@
 <script>
 	import '../global.css'
+	import { globalCss } from '@/ui'
+
+	const globalStyles = globalCss({
+		'#svelte': {
+			visibility: 'visible !important',
+		},
+	})
+
+	globalStyles()
 
 	import Header from './_header.svelte'
 	import Footer from './_footer.svelte'

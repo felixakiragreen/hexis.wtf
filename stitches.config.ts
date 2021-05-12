@@ -2,7 +2,7 @@ import { createCss } from '@stitches/core'
 
 import { tokens, darkTokens, indigoTokens, utils } from './src/theme'
 
-export const { css, global: cssGlobal, keyframes, getCssString, theme } = createCss({
+export const { css, global: globalCss, keyframes, getCssString, theme } = createCss({
 	prefix: '',
 	theme: {
 		...tokens,
