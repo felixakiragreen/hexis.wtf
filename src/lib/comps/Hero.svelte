@@ -72,12 +72,15 @@
 				<Img src={hexisLogo} alt="Hexis Logo" css={{ mt: '$32', mb: '$4' }} />
 
 				<Text as="p" size="lg">
-					An experiment in shape and dimension. The generative madness of an algorithm with the soft
-					guidance of the artist's hand.
+					An experiment in shape and dimension. The generative madness of an
+					algorithm with the soft guidance of an artist's hand.
 					<br />
-					Catch a new episode each friday at 09:00 et.
+					New episode every friday at 09:00 et.
 				</Text>
-				<Link url="#about" css={{ fontWeight: '$bold', text: '$xl', display: 'block' }}>
+				<Link
+					url="#about"
+					css={{ fontWeight: '$bold', text: '$xl', display: 'block' }}
+				>
 					+Read more
 				</Link>
 			</Box>
