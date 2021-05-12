@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { slide } from 'svelte/transition'
+	import { quintInOut } from 'svelte/easing'
+
 	import { stitch } from '@/ui'
 	import Content from '@/lib/bonds/Content.svelte'
 	import Box from '@/lib/atoms/Box.svelte'
@@ -39,11 +42,13 @@
 					<Link>+Read {readingMore ? "less" : "more"}</Link>
 				</div>
 				{#if readingMore}
-					<Box css={{ textAlign: "left", maxWidth: "$xl", mx: "auto" }}>
-						<ArtistStatement />
-					</Box>
-					<div on:click={toggleReading}>
-						<Link>+Close</Link>
+					<div transition:slide={{duration: 500, easing: quintInOut}}>
+						<Box css={{ textAlign: "left", maxWidth: "$xl", mx: "auto" }}>
+							<ArtistStatement />
+						</Box>
+						<div on:click={toggleReading}>
+							<Link>+Close</Link>
+						</div>
 					</div>
 				{/if}
 			</Box>
