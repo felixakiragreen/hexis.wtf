@@ -81,15 +81,15 @@
 					url="#about"
 					css={{ fontWeight: '$bold', text: '$xl', display: 'block' }}
 				>
-					+Read more
+					+ Read more
 				</Link>
 			</Box>
 
 			<Box cls={ss2}>
-				<Inline space="md">
+				<Inline space="md" collapseBelow="md" alignV="center">
 					<Text>join the community of hexagon 💚ers</Text>
-					<Link newTab url={twitter.url}>+Follow on Twitter</Link>
-					<Link newTab url={discord.url}>+Join the Discord</Link>
+					<Link newTab url={twitter.url}>+ Follow on Twitter</Link>
+					<Link newTab url={discord.url}>+ Join the Discord</Link>
 				</Inline>
 			</Box>
 		</Stack>
