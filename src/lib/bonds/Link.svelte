@@ -6,14 +6,12 @@
 	export let newTab = false
 
 	export let css = null
-	export let appearance = 'base'
+	export let appearance = 'blocky'
 
 	const ss = stitch({
-		textTransform: 'uppercase',
-
 		variants: {
 			appearance: {
-				base: {
+				blocky: {
 					// text: '$lg',
 					// fontWeight: '$bold',
 					color: '$highlight',
@@ -41,11 +39,44 @@
 						},
 					},
 				},
+				blockinho: {
+					color: '$highlight',
+					textDecoration: 'none',
+					display: 'inline-block',
+					// transition: '$1',
+
+					'& span': {
+						display: 'inline-block',
+						transition: '$1',
+						// py: '$1',
+						// my: '$-1',
+					},
+
+					'&:hover': {
+						color: '$background',
+						cursor: 'pointer',
+
+						'& span': {
+							backgroundColor: '$highlight',
+							px: '$1',
+							mx: '$-1',
+						},
+					},
+				},
+
 			},
+			// textTransform: {
+			// 	initial: {
+			// 		textTransform: "initial"
+			// 	},
+			// 	uppercase: {
+			// 		textTransform: 'uppercase',
+			// 	},
+			// }
 		},
 
 		defaultVariants: {
-			appearance: 'base',
+			appearance: 'blocky',
 		},
 	})
 </script>
