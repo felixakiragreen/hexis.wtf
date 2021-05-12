@@ -1,10 +1,14 @@
 <script lang="ts">
-	import { stitch } from '@/ui'
-	import { socials } from '@/lib/datum/socials'
+	import { socials, ambition } from '@/lib/datum/socials'
 
 	import HexIcon from '../bonds/HexIcon.svelte'
 	import Inline from '../bonds/Inline.svelte'
 	import Box from '../atoms/Box.svelte'
+	import Anchor from '../atoms/Anchor.svelte'
+	import Image from '../atoms/Image.svelte'
+
+	import ambitionLogo from '@/assets/ambition_sharp_flat_border.svg'
+	import ambitionLogoHover from '@/assets/ambition_sharp_gradient_border.svg'
 
 	import { map } from 'lodash'
 	import type { SocialLink } from '@/types'
@@ -39,6 +43,24 @@
 	}
 
 	$: iconSize = iconSizes[size] || size
+
+	const boxCss = {
+		position: 'relative',
+		'#amb-hex-log-hov': {
+			opacity: 0,
+			transition: '$1',
+		},
+		'&:hover': {
+			'#amb-hex-log-hov': {
+				opacity: 1,
+			},
+		},
+	}
+
+	const imgCss = {
+		position: 'absolute',
+		surrounding: 0,
+	}
 </script>
 
 <!-- <Box cls={ss}>
@@ -51,15 +73,15 @@
 	{#each listSocials as social}
 		<HexIcon {...social} />
 	{/each}
+	<Anchor url={ambition.url} newTab>
+		<Box css={boxCss}>
+			<Image src={ambitionLogo} alt="Ambition Hexagonal Logo" css={imgCss} />
+			<Image
+				src={ambitionLogoHover}
+				alt="Ambition Hexagonal Logo"
+				css={imgCss}
+				id="amb-hex-log-hov"
+			/>
+		</Box>
+	</Anchor>
 </Inline>
-
-<!-- <style>
-	.socials {
-		display: grid;
-		grid-template-columns: 1fr repeat(3, 64px) 1fr;
-	}
-	.socials a {
-		height: 64px;
-		width: 64px;
-	}
-</style> -->
