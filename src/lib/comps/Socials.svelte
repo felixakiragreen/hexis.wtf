@@ -44,7 +44,7 @@
 
 	$: iconSize = iconSizes[size] || size
 
-	const boxCss = {
+	const cssBox = {
 		position: 'relative',
 		'#amb-hex-log-hov': {
 			opacity: 0,
@@ -57,7 +57,7 @@
 		},
 	}
 
-	const imgCss = {
+	const cssImg = {
 		position: 'absolute',
 		surrounding: 0,
 	}
@@ -74,12 +74,12 @@
 		<HexIcon {...social} />
 	{/each}
 	<Anchor url={ambition.url} newTab>
-		<Box css={boxCss}>
-			<Image src={ambitionLogo} alt="Ambition Hexagonal Logo" css={imgCss} />
+		<Box css={cssBox}>
+			<Image src={ambitionLogo} alt="Ambition Hexagonal Logo" css={cssImg} />
 			<Image
 				src={ambitionLogoHover}
 				alt="Ambition Hexagonal Logo"
-				css={imgCss}
+				css={cssImg}
 				id="amb-hex-log-hov"
 			/>
 		</Box>

@@ -144,6 +144,22 @@
 			height: 'auto',
 		},
 	})
+
+	const cssBox = {
+		position: 'absolute',
+		surrounding: 0,
+		transition: '$1',
+		clip: 'hexagon',
+		'&:hover': { opacity: 1 },
+	}
+
+	const cssHex = {
+		position: 'absolute',
+		surrounding: 0,
+		background: 'rgba(10, 10, 9, 0.5)',
+		backdropFilter: 'blur(2px)',
+		clip: 'hexagon',
+	}
 </script>
 
 <Content>
@@ -163,13 +179,9 @@
 						<Image src={episode.gif} alt={episode.title} />
 					{/if}
 				</Box>
-				<Box
-					css={{ position: 'absolute', surrounding: 0, opacity: episode.past ? 0 : 1, transition: '$1', clip: 'hexagon', '&:hover': { opacity: 1 } }}
-				>
+				<Box css={{ ...cssBox, opacity: episode.past ? 0 : 1 }}>
 					{#if episode.past}
-						<Box
-							css={{ position: 'absolute', surrounding: 0, background: 'rgba(10, 10, 9, 0.5)', backdropFilter: 'blur(2px)', clip: 'hexagon' }}
-						/>
+						<Box css={cssHex} />
 					{/if}
 
 					<Stack
