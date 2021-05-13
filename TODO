@@ -5,7 +5,7 @@ DO:
   [x] fetch the images from opensea / rarible / IPFS?
   [x] add ambition logo to social links
   [x] add parallax effect to the Floating Cubes
-  [ ] add mobile responsiveness
+  [x] add mobile responsiveness
   [ ] add if it's still for sale (I could check if owner is ambition?)
   [x] move the 2 cubes
   [x] On the first text blurb can we change "Catch a new episode each friday at 09:00 et." to "New episodes each friday at 09:00 et."
@@ -14,3 +14,4 @@ DO:
   [x] space between boxes
   [x] transition/fly for more text
   
+  [ ] drastically improve the way breakpoints work
