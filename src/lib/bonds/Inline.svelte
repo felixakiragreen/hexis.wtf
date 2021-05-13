@@ -92,6 +92,22 @@
 			space: 'no',
 			// align: 'leading',
 		},
+
+		// TODO: Need to figure out a better way to do this
+		compoundVariants: [
+			{
+				collapseBelow: 'lg',
+				space: 'xl',
+				css: {
+					'@initial': {
+						sy: '$8',
+					},
+					'@lg': {
+						sy: '$0',
+					},
+				},
+			},
+		],
 	})
 
 	// ss({ css })
