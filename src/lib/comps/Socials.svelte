@@ -33,6 +33,7 @@
 	export let space = 'sm'
 	export let align = null
 	export let size = 'md'
+	export let css = null
 
 	const iconSizes = {
 		sm: '$8',
@@ -43,6 +44,8 @@
 	}
 
 	$: iconSize = iconSizes[size] || size
+
+	$: cssInl = css || { '> *': { size: iconSize } }
 
 	const cssBox = {
 		position: 'relative',
@@ -69,7 +72,7 @@
 	{/each}
 </Box> -->
 
-<Inline css={{ '> *': { size: iconSize } }} {space} {align}>
+<Inline css={cssInl} {space} {align}>
 	{#each listSocials as social}
 		<HexIcon {...social} />
 	{/each}
