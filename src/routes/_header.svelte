@@ -11,18 +11,52 @@
 		position: 'relative',
 		zIndex: 100,
 	})
+
+	const cssInl = {
+		py: '$4',
+		'@initial': {
+			sy: '$4',
+			sx: '$0',
+		},
+		'@lg': {
+			sx: '$8',
+			sy: '$0',
+		},
+	}
+
+	const cssTxt = {
+		//
+		color: '$muted',
+		'@initial': {
+			text: '$sm',
+		},
+		'@md': {
+			text: '$md',
+		},
+	}
+
+	const cssLnk = {
+		'@initial': {
+			'> *': { size: '$10' },
+		},
+		'@md': {
+			'> *': { size: '$8' },
+		},
+	}
 </script>
 
 <header class={ss()}>
 	<Content>
-		<Inline align="trailing" alignV="center" collapseBelow="lg" space="xl" css={{ py: '$4' }}>
-			<Text css={{ color: '$muted' }}>
+		<Inline align="trailing" alignV="center" collapseBelow="lg" css={cssInl}>
+			<Text css={cssTxt}>
 				new episodes
 				<b>friday @ 09:00 et</b>
 			</Text>
-			<Link url="#season01">Season 1</Link>
-			<Link url="#about">About</Link>
-			<Socials size="sm" space="no" />
+			<Inline space="xl">
+				<Link url="#season01">Season 1</Link>
+				<Link url="#about">About</Link>
+			</Inline>
+			<Socials css={cssLnk} space="no" />
 		</Inline>
 	</Content>
 </header>
