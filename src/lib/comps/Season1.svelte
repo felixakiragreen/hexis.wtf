@@ -50,17 +50,57 @@
 		flexWrap: 'wrap',
 		justifyContent: 'center',
 
-		'& > div': {
-			width: '20%' /* = 100 / 5 */,
-			mb: '-3.2%',
+		'@initial': {
+			'& > div': {
+				width: '50%' /* = 100 / 3 */,
+				mb: '-6.2%',
+			},
+			'& > div:nth-child(3n+3)': {
+				/* first hexagon of even rows */
+				ml: '25%' /* = width of .hex / 2  to indent even rows */,
+				mr: '25%' /* = width of .hex / 2  to indent even rows */,
+			},
 		},
-		'& > div:nth-child(9n+6)': {
-			/* first hexagon of even rows */
-			ml: '10%' /* = width of .hex / 2  to indent even rows */,
+		'@sm': {
+			'& > div': {
+				width: '33.33%' /* = 100 / 3 */,
+				mb: '-4.2%',
+			},
+			'& > div:nth-child(3n+3)': {
+				// clear
+				ml: 0,
+				mr: 0,
+			},
+			'& > div:nth-child(5n+4)': {
+				/* first hexagon of even rows */
+				ml: '16.67%' /* = width of .hex / 2  to indent even rows */,
+			},
+			'& > div:nth-child(5n+5)': {
+				/* last hexagon of even rows */
+				mr: '16.67%' /* = width of .hex / 2  to indent even rows */,
+			},
 		},
-		'& > div:nth-child(9n+9)': {
-			/* last hexagon of even rows */
-			mr: '10%' /* = width of .hex / 2  to indent even rows */,
+		'@md': {
+			'& > div': {
+				width: '20%' /* = 100 / 5 */,
+				mb: '-2.4%',
+			},
+			'& > div:nth-child(5n+4)': {
+				// clear
+				ml: 0,
+			},
+			'& > div:nth-child(5n+5)': {
+				// clear
+				mr: 0,
+			},
+			'& > div:nth-child(9n+6)': {
+				/* first hexagon of even rows */
+				ml: '10%' /* = width of .hex / 2  to indent even rows */,
+			},
+			'& > div:nth-child(9n+9)': {
+				/* last hexagon of even rows */
+				mr: '10%' /* = width of .hex / 2  to indent even rows */,
+			},
 		},
 	})
 
@@ -70,19 +110,41 @@
 		flexWrap: 'wrap',
 		justifyContent: 'center',
 
-		pb: '4.4%',
-
-		'& > div': {
-			width: '20%' /* = 100 / 5 */,
-			mb: '-3.2%',
+		'@initial': {
+			'& > div': {
+				width: '50%' /* = 100 / 3 */,
+				mb: '-6.2%',
+			},
+			'& > div:nth-child(1)': {
+				/* first hexagon of even rows */
+				ml: '25%' /* = width of .hex / 2  to indent even rows */,
+				mr: '25%' /* = width of .hex / 2  to indent even rows */,
+			},
 		},
-		'& > div:nth-child(1)': {
-			/* first hexagon of even rows */
-			ml: '25%' /* = width of .hex / 2  to indent even rows */,
+		'@sm': {
+			'& > div': {
+				width: '33.33%' /* = 100 / 3 */,
+				mb: '-4.2%',
+			},
+			'& > div:nth-child(1)': {
+				// clear
+				ml: 0,
+				mr: 0,
+			},
 		},
-		'& > div:nth-child(2)': {
-			/* last hexagon of even rows */
-			mr: '25%' /* = width of .hex / 2  to indent even rows */,
+		'@md': {
+			'& > div': {
+				width: '20%' /* = 100 / 5 */,
+				mb: '-2.4%',
+			},
+			'& > div:nth-child(1)': {
+				/* first hexagon of even rows */
+				ml: '25%' /* = width of .hex / 2  to indent even rows */,
+			},
+			'& > div:nth-child(2)': {
+				/* last hexagon of even rows */
+				mr: '25%' /* = width of .hex / 2  to indent even rows */,
+			},
 		},
 	})
 
@@ -92,6 +154,10 @@
 	$: last3 = takeRight(items, 3)
 
 	onMount(async () => {
+		fetchShit()
+	})
+
+	const fetchShit = async () => {
 		fetchOpenSeaAssets().then((results) => {
 			// console.log({ results })
 			results.forEach((result) => {
@@ -115,7 +181,7 @@
 			})
 			// console.log('items', { items, first50, last3 })
 		})
-	})
+	}
 
 	const ssImgHex = stitch({
 		position: 'absolute',
@@ -183,7 +249,7 @@
 					{/if}
 
 					<Stack
-						css={{ position: 'absolute', surrounding: 0, text: '$sm' }}
+						css={{ position: 'absolute', surrounding: 0, '@initial': { text: '$xs' }, '@sm': { text: '$sm' } }}
 						align="center"
 						alignV="center"
 					>
@@ -221,7 +287,7 @@
 	<Box cls={ssLast3}>
 
 		{#each last3 as episode}
-			<Box css={{ position: 'relative', size: '$100%' }}>
+			<Box cls={ssHex}>
 				<Hexagon fill={'var(--colors-grey900)'} />
 				<Stack
 					css={{ position: 'absolute', surrounding: 0 }}
