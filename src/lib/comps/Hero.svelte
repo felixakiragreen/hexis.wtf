@@ -48,19 +48,31 @@
 	const ss2 = stitch({
 		p: '$6',
 		borderRadius: '$sm',
-		// bg: '$red200',
-		// textAlign: 'center',
 		border: '1px solid $foreground',
-
-		// '& h1': {
-		// 	text: '$9xl',
-		// },
-
-		// '& p': {
-		// 	text: '$lg',
-		// 	maxWidth: '$2xl',
-		// },
 	})
+
+	const cssLogo = {
+		'@initial': {
+			mt: '$8',
+			mb: '$4',
+		},
+		'@md': {
+			mt: '$32',
+			mb: '$4',
+		},
+	}
+
+	const cssJoin = {
+		textAlign: 'center',
+		'@initial': {
+			sy: '$2',
+			sx: '$0',
+		},
+		'@md': {
+			sx: '$4',
+			sy: '$0',
+		},
+	}
 </script>
 
 <Box cls={ss}>
@@ -68,8 +80,7 @@
 	<Content css={{ overflowY: 'visible' }}>
 		<Stack space="3xl" align="center">
 			<Box cls={ss1}>
-				<!-- <Text as="h1" size="9xl">hexis</Text> -->
-				<Img src={hexisLogo} alt="Hexis Logo" css={{ mt: '$32', mb: '$4' }} />
+				<Img src={hexisLogo} alt="Hexis Logo" css={cssLogo} />
 
 				<Text as="p" size="lg">
 					An experiment in shape and dimension. The generative madness of an
@@ -86,7 +97,7 @@
 			</Box>
 
 			<Box cls={ss2}>
-				<Inline space="md" collapseBelow="md" alignV="center">
+				<Inline collapseBelow="md" css={cssJoin}>
 					<Text>join the community of hexagon 💚ers</Text>
 					<Link newTab url={twitter.url}>+ Follow on Twitter</Link>
 					<Link newTab url={discord.url}>+ Join the Discord</Link>
