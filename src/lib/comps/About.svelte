@@ -22,6 +22,16 @@
 	function toggleReading() {
 		readingMore = !readingMore
 	}
+
+	const cssQuo = {
+		py: '$24',
+		'@initial': {
+			text: '$lg',
+		},
+		'@md': {
+			text: '$2xl',
+		},
+	}
 </script>
 
 <!-- prettier-ignore -->
@@ -52,7 +62,7 @@
 					</div>
 				{/if}
 			</Box>
-			<Box css={{ py: '$24', text: "$2xl" }}>
+			<Box css={cssQuo}>
 				<Text css={{ color: "$felixgreen" }}>⬡</Text>
 				<Text as="p">
 					<b>“<i>Hexis</i></b> means in one sense an activity ... <b>when one
