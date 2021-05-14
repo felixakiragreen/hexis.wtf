@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { stitch } from '@/ui'
 	import Content from '@/lib/bonds/Content.svelte'
-	import Img from '@/lib/atoms/Image.svelte'
+	import Image from '@/lib/atoms/Image.svelte'
 	import Box from '@/lib/atoms/Box.svelte'
 	import Inline from '@/lib/bonds/Inline.svelte'
 	import Stack from '@/lib/bonds/Stack.svelte'
@@ -50,29 +50,6 @@
 		borderRadius: '$sm',
 		border: '1px solid $foreground',
 	})
-
-	const cssLogo = {
-		'@initial': {
-			mt: '$8',
-			mb: '$4',
-		},
-		'@md': {
-			mt: '$32',
-			mb: '$4',
-		},
-	}
-
-	const cssJoin = {
-		textAlign: 'center',
-		'@initial': {
-			sy: '$2',
-			sx: '$0',
-		},
-		'@md': {
-			sx: '$4',
-			sy: '$0',
-		},
-	}
 </script>
 
 <Box cls={ss}>
@@ -80,7 +57,12 @@
 	<Content css={{ overflowY: 'visible' }}>
 		<Stack space="3xl" align="center">
 			<Box cls={ss1}>
-				<Img src={hexisLogo} alt="Hexis Logo" css={cssLogo} />
+				<Image
+					src={hexisLogo}
+					alt="Hexis Logo"
+					css_initial={{ mt: '$8', mb: '$4' }}
+					css_md={{ mt: '$64' }}
+				/>
 
 				<Text as="p" size="lg">
 					An experiment in shape and dimension. The generative madness of an
@@ -97,7 +79,12 @@
 			</Box>
 
 			<Box cls={ss2}>
-				<Inline collapseBelow="md" css={cssJoin}>
+				<Inline
+					space="md"
+					spaceV="sm"
+					collapseBelow="md"
+					css={{ textAlign: 'center' }}
+				>
 					<Text>join the community of hexagon 💚ers</Text>
 					<Link newTab url={twitter.url}>+ Follow on Twitter</Link>
 					<Link newTab url={discord.url}>+ Join the Discord</Link>
