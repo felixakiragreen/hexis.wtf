@@ -12,21 +12,13 @@
 		zIndex: 100,
 	})
 
-	const cssInl = {
-		py: '$4',
-		'@initial': {
-			sy: '$4',
-			sx: '$0',
-		},
-		'@lg': {
-			sx: '$8',
-			sy: '$0',
-		},
-	}
-
 	const cssTxt = {
 		//
 		color: '$muted',
+		// text: {
+		// 	'@initial': '$sm',
+		// 	'@md': '$md',
+		// },
 		'@initial': {
 			text: '$sm',
 		},
@@ -47,12 +39,19 @@
 
 <header class={ss()}>
 	<Content>
-		<Inline align="trailing" alignV="center" collapseBelow="lg" css={cssInl}>
+		<Inline
+			space="lg"
+			spaceV="md"
+			align="trailing"
+			alignV="center"
+			collapseBelow="md"
+			css={{ py: '$4' }}
+		>
 			<Text css={cssTxt}>
 				new episodes
 				<b>friday @ 09:00 et</b>
 			</Text>
-			<Inline space="xl">
+			<Inline space="lg">
 				<Link url="#season01">Season 1</Link>
 				<Link url="#about">About</Link>
 			</Inline>
