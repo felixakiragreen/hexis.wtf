@@ -29,6 +29,7 @@
 		url?: string
 		urlOpenSea?: string
 		urlRarible?: string
+		available?: boolean
 	}
 
 	const items: Episode[] = map(new Array(53), (value, index) => {
@@ -177,6 +178,9 @@
 					if (result.urlRarible && result.urlRarible !== '') {
 						items[itemIndex].urlRarible = result.urlRarible
 					}
+					if (typeof result.available !== 'undefined') {
+						items[itemIndex].available = result.available
+					}
 				}
 			})
 			// console.log('items', { items, first50, last3 })
@@ -187,6 +191,7 @@
 		position: 'absolute',
 		surrounding: 0,
 		clip: 'hexagon',
+		overflow: 'hidden',
 
 		'& video': {
 			size: '$full',
@@ -203,7 +208,7 @@
 	const ssHex = stitch({
 		position: 'relative',
 		size: '$100%',
-		overflow: 'hidden',
+
 		'& svg': {
 			display: 'block',
 			height: 'auto',
@@ -244,6 +249,13 @@
 						<Image src={episode.gif} alt={episode.title} />
 					{/if}
 				</Box>
+				{#if episode.available}
+					<Box css={{ ...cssBox, surrounding: '-1%', zIndex: -1 }}>
+						<Box
+							css={{ position: 'absolute', surrounding: 0, bg: '$green400' }}
+						/>
+					</Box>
+				{/if}
 				<Box css={{ ...cssBox, opacity: episode.past ? 0 : 1 }}>
 					{#if episode.past}
 						<Box css={cssHex} />
@@ -276,7 +288,12 @@
 									rarible
 								</Link>
 							{/if}
+
 						</Inline>
+
+						{#if episode.available}
+							<Text>for sale</Text>
+						{/if}
 
 					</Stack>
 				</Box>
