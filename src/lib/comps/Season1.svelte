@@ -203,6 +203,7 @@
 	const ssHex = stitch({
 		position: 'relative',
 		size: '$100%',
+		overflow: 'hidden',
 		'& svg': {
 			display: 'block',
 			height: 'auto',
