@@ -12,57 +12,51 @@
 
 	import hexisLogo from '@/assets/hexis-logo.svg'
 
-	import Icon, { ChevronDoubleDown } from 'svelte-hero-icons'
-
-	const ss = stitch({
-		// backgroundColor: '$red600',
-		// color: '$foreground',
-		// position: 'relative',
+	const ssTop = stitch({
 		minHeight: 'calc(100vh - 96px)',
 		minWidth: '$screen-w',
-		// overflowX: 'hidden',
 
 		'& section': {
 			position: 'relative',
 			height: '$full',
-			// minHeight: '$screen-h',
-			// minWidth: '$screen-w',
 			display: 'flex',
 			alignItems: 'center',
 			justifyContent: 'center',
 		},
 	})
 
-	const ss1 = stitch({
-		// mt: '$10',
-		// bg: '$red400',
+	const ssLogo = stitch({
 		maxWidth: '$2xl',
 		textAlign: 'center',
 		zIndex: 2,
-
-		// '& h1': {
-		// 	text: '$9xl',
-		// },
 	})
 
-	const ss2 = stitch({
+	const ssCta = stitch({
 		p: '$6',
 		borderRadius: '$sm',
 		border: '1px solid $foreground',
 	})
+
+	const ssImg = stitch({
+		mb: '$4',
+		'@initial': {
+			mt: '$8',
+		},
+		'@sm': {
+			mt: '$24',
+		},
+		'@md': {
+			mt: '$48',
+		},
+	})
 </script>
 
-<Box cls={ss}>
+<Box cls={ssTop}>
 
 	<Content css={{ overflowY: 'visible' }}>
 		<Stack space="3xl" align="center">
-			<Box cls={ss1}>
-				<Image
-					src={hexisLogo}
-					alt="Hexis Logo"
-					css_initial={{ mt: '$8', mb: '$4' }}
-					css_md={{ mt: '$64' }}
-				/>
+			<Box cls={ssLogo}>
+				<Image src={hexisLogo} alt="Hexis Logo" cls={ssImg} />
 
 				<Text as="p" size="lg">
 					An experiment in shape and dimension. The generative madness of an
@@ -78,7 +72,7 @@
 				</Link>
 			</Box>
 
-			<Box cls={ss2}>
+			<Box cls={ssCta}>
 				<Inline
 					space="md"
 					spaceV="sm"
