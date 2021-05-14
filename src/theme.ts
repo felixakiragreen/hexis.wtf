@@ -163,6 +163,21 @@ const space = {
 	'-160': '-40rem', // 640px
 }
 
+const spacing = {
+	no: space[0],
+	sm: space[2],
+	md: space[4],
+	lg: space[6],
+	xl: space[8],
+	'2xl': space[10],
+	'3xl': space[12],
+	'4xl': space[16],
+	'5xl': space[20],
+	'6xl': space[24],
+}
+
+// create a util...
+
 const max = {
 	'0': '0rem',
 	none: 'none',
@@ -233,7 +248,10 @@ export const indigoTokens = {
 
 export const tokens = {
 	colors,
-	space,
+	space: {
+		...space,
+		...spacing,
+	},
 	sizes: {
 		...space,
 		...max,
@@ -397,19 +415,26 @@ export const utils = {
 			size: `${value * 24}px`,
 		},
 	}),
+	s: (config) => (value) => ({
+		// Unfortunately gap doesn't work on mobile Safari
+		gap: value,
+		// '& > * + *': {
+		// 	ml: value,
+		// },
+	}),
 	sx: (config) => (value) => ({
 		// Unfortunately gap doesn't work on mobile Safari
-		// gap: value,
-		'& > * + *': {
-			ml: value,
-		},
+		columnGap: value,
+		// '& > * + *': {
+		// 	ml: value,
+		// },
 	}),
 	sy: (config) => (value) => ({
 		// Unfortunately gap doesn't work on mobile Safari
-		// gap: value,
-		'& > * + *': {
-			mt: value,
-		},
+		rowGap: value,
+		// '& > * + *': {
+		// 	mt: value,
+		// },
 	}),
 	backdropFilter: (config) => (value) => ({
 		backdropFilter: value,
