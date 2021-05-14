@@ -9,6 +9,7 @@ export type OpenSeaAsset = {
 	url: string
 	urlOpenSea: string
 	urlRarible: string
+	available: boolean
 }
 
 export const fetchOpenSeaAssets = async (
@@ -40,5 +41,6 @@ const mapOpenSeaAsset = (object: any): OpenSeaAsset => {
 		url: object['animation_url'],
 		urlOpenSea: object['permalink'],
 		urlRarible: object['external_link'],
+		available: object['owner']?.['user']?.['username'] === 'ambition_wtf',
 	}
 }
