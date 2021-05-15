@@ -8,10 +8,12 @@
 	export let cls = null
 	export let css = null
 	export let style = null
+	export let id = null
 	export let vrt = {}
+
 	const ss = cls || stitch({})
 </script>
 
-<a href={url} {target} class={ss({ ...vrt, css })} {style}>
+<a href={url} {target} class={ss({ ...vrt, css })} {style} {id}>
 	<slot />
 </a>
