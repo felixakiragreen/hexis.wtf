@@ -25,7 +25,6 @@
 		"rehype-slug": "^4.0.1",
 		"remark-abbr": "^1.4.1",
 		"remark-github": "^10.0.1",
-		"simple-icons": "^4.4.0",
 		"svelte": "^3.34.0",
 		"svelte-hero-icons": "^2.2.0",
 		"svelte-preprocess": "^4.0.0",
