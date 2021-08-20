@@ -1,3 +1,8 @@
+NEXT:
+  [ ] fix s01e01 pointint to burned NFT
+  https://opensea.io/assets/0x8a59b9f658c3dac396a9c380a5a8044b02caf68c/1
+  https://opensea.io/assets/0x8a59b9f658c3dac396a9c380a5a8044b02caf68c/4
+
 DO:
   [x] improve load flashing styles
     https://github.com/vitejs/vite/issues/2282
