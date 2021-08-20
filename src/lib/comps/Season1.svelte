@@ -163,7 +163,7 @@
 			// console.log({ results })
 			results.forEach((result) => {
 				const itemIndex = items.findIndex(
-					(episode) => episode.title === result.name
+					(episode) => episode.title === result.name && result.gif !== ''
 				)
 				if (itemIndex >= 0) {
 					if (result.url && result.url !== '') {
@@ -230,17 +230,19 @@
 		backdropFilter: 'blur(2px)',
 		clip: 'hexagon',
 	}
+
+	$: {
+		console.log({ items })
+	}
 </script>
 
 <Content>
-
 	<Box css={{ textAlign: 'center', py: '$8' }} id="season01">
 		<Text as="h2" size="4xl" css={{ mb: '$-3' }}>season 01</Text>
 		<Text as="p" size="lg">a cube finds its way</Text>
 	</Box>
 
 	<Box cls={ssFirst50}>
-
 		{#each first50 as episode}
 			<Box cls={ssHex}>
 				<Hexagon fill={'var(--colors-grey900)'} />
@@ -262,11 +264,15 @@
 					{/if}
 
 					<Stack
-						css={{ position: 'absolute', surrounding: 0, '@initial': { text: '$xs' }, '@sm': { text: '$sm' } }}
+						css={{
+							position: 'absolute',
+							surrounding: 0,
+							'@initial': { text: '$xs' },
+							'@sm': { text: '$sm' },
+						}}
 						align="center"
 						alignV="center"
 					>
-
 						<Text css={{ text: '$md', fontWeight: '$bold' }}>
 							{episode.title}
 						</Text>
@@ -288,22 +294,17 @@
 									rarible
 								</Link>
 							{/if}
-
 						</Inline>
 
 						{#if episode.available}
 							<Text>for sale</Text>
 						{/if}
-
 					</Stack>
 				</Box>
-
 			</Box>
 		{/each}
-
 	</Box>
 	<Box cls={ssLast3}>
-
 		{#each last3 as episode}
 			<Box cls={ssHex}>
 				<Hexagon fill={'var(--colors-grey900)'} />
@@ -319,7 +320,5 @@
 				</Stack>
 			</Box>
 		{/each}
-
 	</Box>
-
 </Content>
