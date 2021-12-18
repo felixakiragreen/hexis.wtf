@@ -13,3 +13,16 @@ export type SocialLink = {
 		}
 	}
 }
+
+export type Episode = {
+	id: string
+	episode: string
+	title: string
+	date: Date
+	past: boolean
+	gif?: string
+	url?: string
+	urlOpenSea?: string
+	urlRarible?: string
+	available?: boolean
+}
