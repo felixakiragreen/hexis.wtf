@@ -1,5 +1,15 @@
 import { map } from 'lodash'
 
+const OS_API_KEY = `83b1064f4a1545f881a7a1f084d43137`
+
+const options = {
+	method: 'GET',
+	headers: {
+		Accept: 'application/json',
+		'X-API-KEY': OS_API_KEY,
+	},
+}
+
 const OPENSEA_ASSETS_URL = 'https://api.opensea.io/api/v1/assets'
 const HEXIS_SEASON_1_ADDRESS = '0x8a59b9f658c3dac396a9c380a5a8044b02caf68c'
 
@@ -21,7 +31,7 @@ export const fetchOpenSeaAssets = async (
 
 	return new Promise((resolve, reject) => {
 		try {
-			fetch(url)
+			fetch(url, options)
 				.then((res) => res.json())
 				.then((json) => {
 					console.log(`fetchOpenSeaAssets(${url}) → `, { json })
